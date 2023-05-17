@@ -36,7 +36,7 @@
      * SYSTEM MODES
      * UP(UP AND RUNNING) , DOWN(MAINTENANCE) , DEV(DEVELOPMENT TEST DABATASE) , LOCAL (LOCAL MODE)
      */
-    $system['mode']  = 'local';
+    $system['mode']  = 'up';
 
     /**
      * SYSTEM SITE NAME
@@ -49,7 +49,7 @@
     $system['time_zone'] = 'Asia/Manila';
     /** VERSION */
     $system['version']  = 'N/A';
-    
+
     define('DB_PREFIX' , 'hr_');
 
     date_default_timezone_set($system['time_zone']);

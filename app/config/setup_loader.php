@@ -52,14 +52,14 @@
         break;
 
         case 'up':
-            define('URL' , 'https://www.vividoptical.online');
+            define('URL' , 'https://www.ntchris.online ');
             define('DBVENDOR' , 'mysql');
             define('DBHOST' , 'localhost');
             define('DBUSER' , 'korpzpru_th_main');
             define('DBPASS' , 'Y[@h=Ytz;(f}');
-            define('DBNAME' , 'korpzpru_vivid_optical');
+            define('DBNAME' , 'korpzpru_hris');
 
-            define('BASECONTROLLER' , 'AuthController');
+            define('BASECONTROLLER' , 'UserController');
             define('BASEMETHOD' , 'index');
         break;
     }
