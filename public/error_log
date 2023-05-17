@@ -1,0 +1,75 @@
+[23-Jun-2021 17:43:40 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 17:43:42 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 17:45:24 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 17:45:26 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 18:26:37 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 18:26:37 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 18:26:37 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 19:41:51 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 20:12:22 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 20:12:31 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 20:15:26 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 20:15:46 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[23-Jun-2021 20:15:46 Asia/Manila] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/coredcoa/public_html/app/config/path.php on line 14
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant DEFAULT_REPLY_TO already defined in /home/coredcoa/public_html/app/config/constants.php on line 67
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant MAILER_AUTH already defined in /home/coredcoa/public_html/app/config/constants.php on line 69
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant ITEXMO already defined in /home/coredcoa/public_html/app/config/constants.php on line 78
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS already defined in /home/coredcoa/public_html/app/config/constants.php on line 86
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS_PATH already defined in /home/coredcoa/public_html/app/config/constants.php on line 93
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant GLOBALS already defined in /home/coredcoa/public_html/app/config/constants.php on line 100
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant SITE_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 102
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant COMPANY_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 104
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant KEY_WORDS already defined in /home/coredcoa/public_html/app/config/constants.php on line 106
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant DESCRIPTION already defined in /home/coredcoa/public_html/app/config/constants.php on line 109
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant AUTHOR already defined in /home/coredcoa/public_html/app/config/constants.php on line 111
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Notice:  Constant MODULE_TASK_ACTIVITY already defined in /home/coredcoa/public_html/app/config/constants.php on line 117
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant DEFAULT_REPLY_TO already defined in /home/coredcoa/public_html/app/config/constants.php on line 67
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant MAILER_AUTH already defined in /home/coredcoa/public_html/app/config/constants.php on line 69
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant ITEXMO already defined in /home/coredcoa/public_html/app/config/constants.php on line 78
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS already defined in /home/coredcoa/public_html/app/config/constants.php on line 86
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS_PATH already defined in /home/coredcoa/public_html/app/config/constants.php on line 93
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant GLOBALS already defined in /home/coredcoa/public_html/app/config/constants.php on line 100
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant SITE_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 102
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant COMPANY_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 104
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant KEY_WORDS already defined in /home/coredcoa/public_html/app/config/constants.php on line 106
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant DESCRIPTION already defined in /home/coredcoa/public_html/app/config/constants.php on line 109
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant AUTHOR already defined in /home/coredcoa/public_html/app/config/constants.php on line 111
+[30-Jun-2021 20:43:55 Asia/Manila] PHP Notice:  Constant MODULE_TASK_ACTIVITY already defined in /home/coredcoa/public_html/app/config/constants.php on line 117
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant DEFAULT_REPLY_TO already defined in /home/coredcoa/public_html/app/config/constants.php on line 67
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant MAILER_AUTH already defined in /home/coredcoa/public_html/app/config/constants.php on line 69
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant ITEXMO already defined in /home/coredcoa/public_html/app/config/constants.php on line 78
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS already defined in /home/coredcoa/public_html/app/config/constants.php on line 86
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS_PATH already defined in /home/coredcoa/public_html/app/config/constants.php on line 93
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant GLOBALS already defined in /home/coredcoa/public_html/app/config/constants.php on line 100
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant SITE_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 102
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant COMPANY_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 104
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant KEY_WORDS already defined in /home/coredcoa/public_html/app/config/constants.php on line 106
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant DESCRIPTION already defined in /home/coredcoa/public_html/app/config/constants.php on line 109
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant AUTHOR already defined in /home/coredcoa/public_html/app/config/constants.php on line 111
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Notice:  Constant MODULE_TASK_ACTIVITY already defined in /home/coredcoa/public_html/app/config/constants.php on line 117
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant DEFAULT_REPLY_TO already defined in /home/coredcoa/public_html/app/config/constants.php on line 67
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant MAILER_AUTH already defined in /home/coredcoa/public_html/app/config/constants.php on line 69
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant ITEXMO already defined in /home/coredcoa/public_html/app/config/constants.php on line 78
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS already defined in /home/coredcoa/public_html/app/config/constants.php on line 86
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant APP_EXTENSIONS_PATH already defined in /home/coredcoa/public_html/app/config/constants.php on line 93
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant GLOBALS already defined in /home/coredcoa/public_html/app/config/constants.php on line 100
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant SITE_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 102
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant COMPANY_NAME already defined in /home/coredcoa/public_html/app/config/constants.php on line 104
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant KEY_WORDS already defined in /home/coredcoa/public_html/app/config/constants.php on line 106
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant DESCRIPTION already defined in /home/coredcoa/public_html/app/config/constants.php on line 109
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant AUTHOR already defined in /home/coredcoa/public_html/app/config/constants.php on line 111
+[30-Jun-2021 20:53:13 Asia/Manila] PHP Notice:  Constant MODULE_TASK_ACTIVITY already defined in /home/coredcoa/public_html/app/config/constants.php on line 117
+[30-Jun-2021 23:09:12 Asia/Manila] PHP Parse error:  syntax error, unexpected end of file in /home/coredcoa/public_html/app/functions/uncommon.php on line 313
+[01-Jul-2021 23:51:01 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:01 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:03 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:04 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:39 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:40 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:41 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:41 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:42 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:42 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:47 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:48 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176
+[01-Jul-2021 23:51:48 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/coredcoa/public_html/app/functions/app_widget.php on line 176

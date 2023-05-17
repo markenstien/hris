@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200&display=swap');
+
+:root {
+  --main-color: #007FFF;
+  --color-warning : #FF642E;
+  --color-danger : #D83A56;
+  --color-success : #29CC97;
+  --color-danger-secondary:  #FFC107;
+  --color-base:  #F5F0F0;
+}
+
+
+:root {
+  --primary: #004A7C;
+  --warning : #FF5733;
+  --danger : #D72323;
+  --success : #28DF99;
+  --color-danger-secondary:  #FFC107;
+  --color-base:  #F5F0F0;
+}
+
+
+body
+{
+	background: var(--color-base);
+	font-family: 'Montserrat', 'Ubuntu' ,sans-serif;
+}
+
+.table{
+	color: #000 !important;
+}	
+
+.table td{
+	color: #000 !important;
+}
+
+/*.table thead th{
+	font-weight: bold !important;
+}*/
+
+form label
+{
+	font-weight: bold !important;
+	color: #000 !important;
+}
+
+/*div.card .card-header{
+	background: #D4D3D3 !important;
+}
+*/
+/*div.card .card-title
+{
+	font-weight: bold;
+}*/
+
+.form-control
+{
+	border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.divider{
+	height: 25px !important;
+}
+
+
+div.card 
+{
+	background: #F5F0F0 !important;
+}
+
+div.card-theme-blue .card-header{
+	background: #31326f !important;
+	color: #fff !important;
+}
+
+div.card-theme-blue .card-title{
+	color: #fff !important;
+}
+
+.card .card-theme-default
+{
+
+}
+
+div.card-theme-default .card-header{
+	background: #fff !important;
+}
+
+
+div.navigationbar
+{
+	background: var(--main-color);
+}
+
+div.leftbar
+{
+	background: var(--main-color);
+}
+
+div.navigationbar ul li a,
+	div.navigationbar ul li a:active,
+	div.navigationbar ul li a:visited
+{
+	color: #fff;
+}
+
+.alert-success
+{
+	background: var(--color-success) !important;
+	color: #fff;
+}
+
+
+.alert-danger
+{
+	background: var(--color-danger) !important;
+	color: #fff;
+}
+
+
+.alert-warning
+{
+	background: var(--color-warning) !important;
+	color: #fff;
+}
+
+.alert-primary
+{
+	background: var(--main-color) !important;
+	color: #fff;
+}
+
+/*
+*OVEWRITE COLORS
+*/
+
+.badge-success
+{
+	background: var(--color-success) !important;
+}
+
+.badge-danger
+{
+	background: var(--color-danger) !important;
+}
+
+.badge-primary
+{
+	background: var(--main-color) !important;
+}
+
+.badge-warning
+{
+	background: var(--color-warning) !important;
+}
+
+
+#internalBackground
+{
+	background: #fff !important;
+}
+
+.btn-primary{
+	background-color: var(--primary);
+}
+
+.btn-warning{
+	background-color: var(--warning);
+}
+.btn-danger{
+	background-color: var(--danger);
+}
+.btn-success{
+	background-color: var(--success);
+}
+
+.navbar-nav.sidebar{
+	background: #088395;
+}

@@ -1,0 +1,605 @@
+[08-May-2021 01:54:18 Asia/Manila] PHP Warning:  Use of undefined constant BASECONTROLLER - assumed 'BASECONTROLLER' (this will throw an Error in a future version of PHP) in /home/monshhic/public_html/public/index.php on line 20
+[08-May-2021 01:54:18 Asia/Manila] PHP Warning:  Use of undefined constant BASEMETHOD - assumed 'BASEMETHOD' (this will throw an Error in a future version of PHP) in /home/monshhic/public_html/public/index.php on line 20
+[08-May-2021 01:54:18 Asia/Manila] PHP Warning:  require_once(/home/monshhic/public_html/app/controllers/BASECONTROLLER.php): failed to open stream: No such file or directory in /home/monshhic/public_html/app/core/Bootstrap.php on line 22
+[08-May-2021 01:54:18 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required '/home/monshhic/public_html/app/controllers/BASECONTROLLER.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/monshhic/public_html/app/core/Bootstrap.php on line 22
+[08-May-2021 01:55:31 Asia/Manila] PHP Warning:  Use of undefined constant BASECONTROLLER - assumed 'BASECONTROLLER' (this will throw an Error in a future version of PHP) in /home/monshhic/public_html/public/index.php on line 20
+[08-May-2021 01:55:31 Asia/Manila] PHP Warning:  Use of undefined constant BASEMETHOD - assumed 'BASEMETHOD' (this will throw an Error in a future version of PHP) in /home/monshhic/public_html/public/index.php on line 20
+[08-May-2021 01:55:31 Asia/Manila] PHP Warning:  require_once(/home/monshhic/public_html/app/controllers/BASECONTROLLER.php): failed to open stream: No such file or directory in /home/monshhic/public_html/app/core/Bootstrap.php on line 22
+[08-May-2021 01:55:31 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required '/home/monshhic/public_html/app/controllers/BASECONTROLLER.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/monshhic/public_html/app/core/Bootstrap.php on line 22
+[08-May-2021 01:56:19 Asia/Manila] PHP Notice:  Undefined variable: tye in /home/monshhic/public_html/app/models/UserModel.php on line 56
+[08-May-2021 01:57:14 Asia/Manila] PHP Notice:  Undefined variable: created in /home/monshhic/public_html/app/models/ProjectModel.php on line 41
+[08-May-2021 02:01:01 Asia/Manila] PHP Notice:  Undefined variable: tye in /home/monshhic/public_html/app/models/UserModel.php on line 56
+[08-May-2021 02:03:50 Asia/Manila] PHP Notice:  Trying to get property 'position' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 225
+[08-May-2021 02:03:50 Asia/Manila] PHP Notice:  Trying to get property 'rate_per_hour' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 231
+[08-May-2021 02:05:56 Asia/Manila] PHP Notice:  Trying to get property 'position' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 225
+[08-May-2021 02:05:56 Asia/Manila] PHP Notice:  Trying to get property 'rate_per_hour' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 231
+[08-May-2021 02:06:12 Asia/Manila] PHP Notice:  Trying to get property 'position' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 225
+[08-May-2021 02:06:12 Asia/Manila] PHP Notice:  Trying to get property 'rate_per_hour' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 231
+[09-May-2021 08:10:01 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function wEmailComplete(), 0 passed in /home/monshhic/public_html/app/controllers/Test.php on line 11 and exactly 1 expected in /home/monshhic/public_html/app/functions/email_tmp.php:5
+Stack trace:
+#0 /home/monshhic/public_html/app/controllers/Test.php(11): wEmailComplete()
+#1 /home/monshhic/public_html/app/core/Bootstrap.php(187): Test->index()
+#2 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#3 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#4 {main}
+  thrown in /home/monshhic/public_html/app/functions/email_tmp.php on line 5
+[15-May-2021 00:41:15 Asia/Manila] PHP Warning:  Illegal string offset 'status' in /home/monshhic/public_html/app/controllers/ProjectController.php on line 145
+[15-May-2021 00:41:30 Asia/Manila] PHP Warning:  Illegal string offset 'status' in /home/monshhic/public_html/app/controllers/ProjectController.php on line 186
+[15-May-2021 00:41:57 Asia/Manila] PHP Warning:  Illegal string offset 'status' in /home/monshhic/public_html/app/controllers/ProjectController.php on line 145
+[15-May-2021 00:42:16 Asia/Manila] PHP Warning:  Illegal string offset 'status' in /home/monshhic/public_html/app/controllers/ProjectController.php on line 186
+[15-May-2021 00:52:22 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/monshhic/public_html/app/views/project_invitation/show.php on line 70
+[15-May-2021 00:56:51 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 00:56:51 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 00:56:51 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 00:56:51 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined index: id in /home/monshhic/public_html/app/controllers/ProjectController.php on line 119
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: title in /home/monshhic/public_html/app/models/ProjectModel.php on line 137
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: description in /home/monshhic/public_html/app/models/ProjectModel.php on line 138
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: budget in /home/monshhic/public_html/app/models/ProjectModel.php on line 139
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: status in /home/monshhic/public_html/app/models/ProjectModel.php on line 140
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: skills in /home/monshhic/public_html/app/models/ProjectModel.php on line 141
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined variable: title in /home/monshhic/public_html/app/models/ProjectModel.php on line 151
+[15-May-2021 00:59:28 Asia/Manila] PHP Notice:  Undefined index: id in /home/monshhic/public_html/app/controllers/ProjectController.php on line 126
+[15-May-2021 00:59:30 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ProjectController::show(), 0 passed in /home/monshhic/public_html/app/core/Bootstrap.php on line 187 and exactly 1 expected in /home/monshhic/public_html/app/controllers/ProjectController.php:82
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectController->show()
+#1 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#2 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#3 {main}
+  thrown in /home/monshhic/public_html/app/controllers/ProjectController.php on line 82
+[15-May-2021 01:06:03 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:06:03 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:06:03 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:06:03 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:09:15 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:09:15 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:09:15 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:09:15 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:13:15 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 18
+[15-May-2021 01:33:00 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:33:00 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:33:00 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:33:00 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:35:17 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:35:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 01:35:17 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:35:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 88
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'people' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 91
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'tasks' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 92
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 14
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 18
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'logo' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 45
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 49
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'status' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 54
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'budget' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 59
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'skills' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 64
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'description' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 69
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'first_name' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'last_name' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 76
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 76
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 83
+[15-May-2021 01:43:53 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/monshhic/public_html/app/views/project/show.php on line 107
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 135
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 155
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'logo' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 156
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 161
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'banner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 162
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 217
+[15-May-2021 01:43:53 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 261
+[15-May-2021 14:37:09 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:37:09 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:37:09 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:37:09 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:37:20 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ProjectExpensesController::index(), 0 passed in /home/monshhic/public_html/app/core/Bootstrap.php on line 187 and exactly 1 expected in /home/monshhic/public_html/app/controllers/ProjectExpensesController.php:12
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index()
+#1 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#2 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#3 {main}
+  thrown in /home/monshhic/public_html/app/controllers/ProjectExpensesController.php on line 12
+[15-May-2021 14:37:22 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:37:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:37:22 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:37:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:45:44 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:45:44 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:45:44 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:45:44 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:48:34 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:48:34 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[15-May-2021 14:48:34 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 14:48:34 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[15-May-2021 16:27:07 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 20
+[16-May-2021 10:20:01 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:20:01 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:20:01 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:20:01 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:26:33 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:26:33 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:26:33 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:26:33 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 88
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'people' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 91
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'tasks' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 92
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 14
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 18
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'logo' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 45
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 49
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'status' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 54
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'budget' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 59
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'skills' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 64
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'description' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 69
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'first_name' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'last_name' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 75
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'owner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 76
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 76
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 83
+[16-May-2021 10:35:23 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/monshhic/public_html/app/views/project/show.php on line 107
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 135
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 155
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'logo' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 156
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 161
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'banner' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 162
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 217
+[16-May-2021 10:35:23 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/project/show.php on line 261
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'tasks' of non-object in /home/monshhic/public_html/app/controllers/MilestoneController.php on line 74
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/controllers/MilestoneController.php on line 92
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'tasks' of non-object in /home/monshhic/public_html/app/controllers/MilestoneController.php on line 95
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'project' of non-object in /home/monshhic/public_html/app/controllers/MilestoneController.php on line 96
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 19
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 23
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'est_completion' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 27
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'description' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 32
+[16-May-2021 10:37:08 Asia/Manila] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/monshhic/public_html/app/views/milestone/show.php on line 36
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 42
+[16-May-2021 10:37:08 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/monshhic/public_html/app/views/milestone/show.php on line 65
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 93
+[16-May-2021 10:37:08 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/milestone/show.php on line 93
+[16-May-2021 10:46:43 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ProjectExpensesController::index(), 0 passed in /home/monshhic/public_html/app/core/Bootstrap.php on line 187 and exactly 1 expected in /home/monshhic/public_html/app/controllers/ProjectExpensesController.php:12
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index()
+#1 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#2 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#3 {main}
+  thrown in /home/monshhic/public_html/app/controllers/ProjectExpensesController.php on line 12
+[16-May-2021 10:48:55 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:48:55 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:48:55 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:48:55 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:46 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:46 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:46 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:46 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:49 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:49 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:49 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:49 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:54 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:54 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:54 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:54 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:55 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:55 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:50:55 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:50:55 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:58:18 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:58:18 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:58:18 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:58:18 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:58:22 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:58:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:58:22 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:58:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:59:17 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:59:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 8
+[16-May-2021 10:59:17 Asia/Manila] PHP Notice:  Undefined variable: project in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[16-May-2021 10:59:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/slicing_pie/index.php on line 12
+[17-May-2021 07:23:28 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 27
+[17-May-2021 13:14:38 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 27
+[17-May-2021 13:29:28 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/views/task/show.php on line 27
+[18-May-2021 00:23:41 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 20
+[18-May-2021 00:25:26 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/monshhic/public_html/app/models/ProjectOnboardingModel.php on line 41
+[18-May-2021 00:34:43 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 18
+[18-May-2021 08:43:23 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 18
+[18-May-2021 12:26:17 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 18
+[24-May-2021 21:35:59 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function wEmailComplete(), 0 passed in /home/monshhic/public_html/app/controllers/Test.php on line 11 and exactly 1 expected in /home/monshhic/public_html/app/functions/email_tmp.php:5
+Stack trace:
+#0 /home/monshhic/public_html/app/controllers/Test.php(11): wEmailComplete()
+#1 /home/monshhic/public_html/app/core/Bootstrap.php(187): Test->index('wp-includes', 'wlwmanifest.xml')
+#2 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#3 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#4 {main}
+  thrown in /home/monshhic/public_html/app/functions/email_tmp.php on line 5
+[25-May-2021 22:48:07 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:49:28 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:49:29 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:49:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:00 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:01 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:01 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:01 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:02 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:02 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'U.id' in 'on clause' in /home/monshhic/public_html/app/core/Database.php:73
+Stack trace:
+#0 /home/monshhic/public_html/app/core/Database.php(73): PDOStatement->execute()
+#1 /home/monshhic/public_html/app/core/Database.php(111): Database->execute()
+#2 /home/monshhic/public_html/app/models/ExpensesModel.php(30): Database->resultSet()
+#3 /home/monshhic/public_html/app/controllers/ProjectExpensesController.php(21): ExpensesModel->getByProject('5')
+#4 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectExpensesController->index('5')
+#5 /home/monshhic/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#6 /home/monshhic/public_html/public/index.php(20): Bootstrap->__construct()
+#7 {main}
+  thrown in /home/monshhic/public_html/app/core/Database.php on line 73
+[25-May-2021 22:51:28 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/controllers/ProjectExpensesController.php on line 24
+[25-May-2021 22:53:22 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/monshhic/public_html/app/models/ProjectOnboardingModel.php on line 41
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/monshhic/public_html/app/models/ProjectOnboardingModel.php on line 41
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined index: logo in /home/monshhic/public_html/app/functions/upload.php on line 131
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Trying to access array offset on value of type null in /home/monshhic/public_html/app/functions/upload.php on line 131
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined index: banner in /home/monshhic/public_html/app/functions/upload.php on line 131
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Trying to access array offset on value of type null in /home/monshhic/public_html/app/functions/upload.php on line 131
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: title in /home/monshhic/public_html/app/models/ProjectModel.php on line 32
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: description in /home/monshhic/public_html/app/models/ProjectModel.php on line 33
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: budget in /home/monshhic/public_html/app/models/ProjectModel.php on line 34
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: status in /home/monshhic/public_html/app/models/ProjectModel.php on line 35
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: skills in /home/monshhic/public_html/app/models/ProjectModel.php on line 38
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: created_by in /home/monshhic/public_html/app/models/ProjectModel.php on line 39
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: owner_id in /home/monshhic/public_html/app/models/ProjectModel.php on line 40
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/monshhic/public_html/app/models/ProjectModel.php on line 56
+[11-Jun-2021 19:59:31 Asia/Manila] PHP Notice:  Undefined variable: created_by in /home/monshhic/public_html/app/models/ProjectModel.php on line 57
+[11-Jun-2021 19:59:35 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[11-Jun-2021 19:59:36 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[12-Jun-2021 04:00:04 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 34
+[12-Jun-2021 04:02:17 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/monshhic/public_html/app/models/ProjectOnboardingModel.php on line 41
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined index: attachment in /home/monshhic/public_html/app/functions/upload.php on line 131
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Trying to access array offset on value of type null in /home/monshhic/public_html/app/functions/upload.php on line 131
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: email in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 40
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: project_id in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 41
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: project_id in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 49
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: email in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 50
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: name in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 51
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: position in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 52
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: role_description in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 53
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: rate_per_hour in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 54
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: category in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 56
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: email in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 65
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: email in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 69
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Undefined variable: email in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 72
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/monshhic/public_html/app/models/ProjectInvitationModel.php on line 110
+[12-Jun-2021 04:03:07 Asia/Manila] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (to):  in /home/monshhic/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php:1068
+Stack trace:
+#0 /home/monshhic/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php(990): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('to', '', '')
+#1 /home/monshhic/public_html/app/helpers/MailMaker.php(57): PHPMailer\PHPMailer\PHPMailer->addAddress('', '')
+#2 /home/monshhic/public_html/app/functions/mailers.php(121): MailMaker->setReciever('')
+#3 /home/monshhic/public_html/app/models/ProjectInvitationModel.php(158): _mail('', 'Project Invitat...', '<div style='wid...', '')
+#4 /home/monshhic/public_html/app/models/ProjectInvitationModel.php(17): ProjectInvitationModel->sendInvite('2')
+#5 /home/monshhic/public_html/app/controllers/ProjectInvitationController.php(105): ProjectInvitationModel->createAndSendInvite(Array, '')
+#6 /home/monshhic/public_html/app/core/Bootstrap.php(187): ProjectInvitationController in /home/monshhic/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1068
+[12-Jun-2021 04:03:42 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[12-Jun-2021 04:04:47 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[12-Jun-2021 04:04:49 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[12-Jun-2021 04:04:49 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 20
+[12-Jun-2021 04:07:26 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 13
+[12-Jun-2021 04:07:26 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 20
+[12-Jun-2021 04:07:26 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 36
+[15-Jun-2021 22:49:21 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[15-Jun-2021 23:02:28 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 15
+[15-Jun-2021 23:02:28 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 22
+[15-Jun-2021 23:02:28 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/DashboardController.php on line 38
+[16-Jun-2021 01:21:46 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[16-Jun-2021 01:23:13 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[16-Jun-2021 01:24:13 Asia/Manila] PHP Notice:  Undefined index: account_type in /home/monshhic/public_html/app/controllers/PlatformController.php on line 60
+[16-Jun-2021 01:24:13 Asia/Manila] PHP Notice:  Undefined index: user_id in /home/monshhic/public_html/app/controllers/PlatformController.php on line 62
+[16-Jun-2021 02:42:52 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 22
+[17-Jun-2021 13:18:05 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[17-Jun-2021 23:32:28 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[18-Jun-2021 00:54:46 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/monshhic/public_html/app/models/ProjectModel.php on line 56
+[18-Jun-2021 00:55:04 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[18-Jun-2021 00:55:17 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[18-Jun-2021 00:55:19 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[18-Jun-2021 00:55:44 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[18-Jun-2021 00:55:54 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/monshhic/public_html/app/views/people/index.php on line 18
+[18-Jun-2021 17:15:45 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 22
+[19-Jun-2021 00:29:43 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:29:47 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:32:39 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:32:42 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:38:14 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:39:31 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 00:40:02 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 04:21:19 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/monshhic/public_html/app/controllers/ProjectController.php on line 22
+[19-Jun-2021 04:23:53 Asia/Manila] PHP Notice:  Undefined index: value in /home/monshhic/public_html/app/models/IntentModel.php on line 15
+[19-Jun-2021 04:38:51 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/monshhic/public_html/app/models/ProjectOnboardingModel.php on line 41
+[19-Jun-2021 04:51:40 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 04:53:18 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 04:54:21 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 04:56:44 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 05:05:30 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 05:07:05 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[19-Jun-2021 05:07:07 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/monshhic/public_html/app/functions/uncommon.php on line 149
+[22-Jun-2021 13:49:20 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[22-Jun-2021 18:07:38 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:07:38 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:07:38 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:07:44 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:07:44 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:07:44 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:07:46 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:07:46 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:07:46 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:07:57 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:07:57 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:07:57 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:08:07 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:08:07 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:08:07 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:11:47 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:11:47 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:11:47 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 18:12:37 Asia/Manila] PHP Notice:  Undefined index: image_base64 in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 17
+[22-Jun-2021 18:12:37 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/PlatformController.php on line 18
+[22-Jun-2021 18:12:37 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 19:52:59 Asia/Manila] PHP Notice:  Undefined index: imageBase64 in /home/coredcoa/public_html/app/api/API_Platform.php on line 15
+[22-Jun-2021 19:52:59 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/api/API_Platform.php on line 16
+[22-Jun-2021 19:52:59 Asia/Manila] PHP Notice:  Undefined offset: 1 in /home/coredcoa/public_html/app/functions/upload.php on line 25
+[22-Jun-2021 23:21:51 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/coredcoa/public_html/app/models/ProjectOnboardingModel.php on line 41
+[23-Jun-2021 00:15:56 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 15
+[23-Jun-2021 00:15:56 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 22
+[23-Jun-2021 00:15:56 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 38
+[23-Jun-2021 00:16:40 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[23-Jun-2021 00:16:42 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 22
+[23-Jun-2021 00:16:43 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'profile' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 20
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 25
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'first_name' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 30
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'last_name' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 34
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 38
+[23-Jun-2021 01:02:20 Asia/Manila] PHP Notice:  Trying to get property 'skills' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 58
+[23-Jun-2021 21:49:15 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[23-Jun-2021 21:49:15 Asia/Manila] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (to): chainne.c@blueprintbusinesssolutionscorp.com> in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php:1135
+Stack trace:
+#0 [internal function]: PHPMailer\PHPMailer\PHPMailer->addAnAddress('to', 'chainne.c@bluep...', '')
+#1 /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php(1094): call_user_func_array(Array, Array)
+#2 /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php(990): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('to', 'chainne.c@bluep...', '')
+#3 /home/coredcoa/public_html/app/helpers/MailMaker.php(57): PHPMailer\PHPMailer\PHPMailer->addAddress('chainne.c@bluep...', '')
+#4 /home/coredcoa/public_html/app/functions/mailers.php(121): MailMaker->setReciever('chainne.c@bluep...')
+#5 /home/coredcoa/public_html/app/models/UserModel.php(146): _mail('chainne.c@bluep...', 'Thank you for j...', '\t<div id="email.. in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1135
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: email in /home/coredcoa/public_html/app/models/UserModel.php on line 109
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: first_name in /home/coredcoa/public_html/app/models/UserModel.php on line 117
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: last_name in /home/coredcoa/public_html/app/models/UserModel.php on line 118
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: email in /home/coredcoa/public_html/app/models/UserModel.php on line 119
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: password in /home/coredcoa/public_html/app/models/UserModel.php on line 120
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Notice:  Undefined index: email in /home/coredcoa/public_html/app/models/UserModel.php on line 146
+[23-Jun-2021 21:49:20 Asia/Manila] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (to):  in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php:1068
+Stack trace:
+#0 /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php(990): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('to', '', '')
+#1 /home/coredcoa/public_html/app/helpers/MailMaker.php(57): PHPMailer\PHPMailer\PHPMailer->addAddress(NULL, '')
+#2 /home/coredcoa/public_html/app/functions/mailers.php(121): MailMaker->setReciever(NULL)
+#3 /home/coredcoa/public_html/app/models/UserModel.php(146): _mail(NULL, 'Thank you for j...', '\t<div id="email...')
+#4 /home/coredcoa/public_html/app/controllers/UserController.php(36): UserModel->register(Array)
+#5 /home/coredcoa/public_html/app/core/Bootstrap.php(187): UserController->register()
+#6 /home/coredcoa/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#7 /home/coredcoa/public_html/public/index.php(19): Bootstrap->__construct()
+#8 {main} in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1068
+[23-Jun-2021 21:50:20 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[24-Jun-2021 00:08:12 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[24-Jun-2021 02:05:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 15
+[24-Jun-2021 02:05:22 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 22
+[24-Jun-2021 02:05:22 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 38
+[30-Jun-2021 20:43:54 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 86
+[30-Jun-2021 20:53:12 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/models/TaskDiscussionModel.php on line 78
+[30-Jun-2021 20:53:41 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/models/TaskDiscussionModel.php on line 78
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 25
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 41
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Notice:  Undefined variable: project in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 88
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Notice:  Trying to get property 'people' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 88
+[30-Jun-2021 21:33:31 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in /home/coredcoa/public_html/app/views/dashboard/index_new.php on line 5
+[30-Jun-2021 21:51:54 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[30-Jun-2021 21:53:40 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[30-Jun-2021 23:24:38 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 22
+[30-Jun-2021 23:48:17 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[30-Jun-2021 23:49:59 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[01-Jul-2021 00:44:19 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[01-Jul-2021 00:48:35 Asia/Manila] PHP Notice:  Undefined index: value in /home/coredcoa/public_html/app/models/IntentModel.php on line 15
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/MilestoneController.php on line 73
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: project_id in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 14
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: title in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 15
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: description in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 16
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: est_completion in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 17
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: is_public in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 18
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: priority in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 19
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined variable: title in /home/coredcoa/public_html/app/models/MilestoneModel.php on line 27
+[01-Jul-2021 23:56:36 Asia/Manila] PHP Notice:  Undefined index: id in /home/coredcoa/public_html/app/controllers/MilestoneController.php on line 80
+[01-Jul-2021 23:56:38 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MilestoneController::show(), 0 passed in /home/coredcoa/public_html/app/core/Bootstrap.php on line 187 and exactly 1 expected in /home/coredcoa/public_html/app/controllers/MilestoneController.php:83
+Stack trace:
+#0 /home/coredcoa/public_html/app/core/Bootstrap.php(187): MilestoneController->show()
+#1 /home/coredcoa/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#2 /home/coredcoa/public_html/public/index.php(19): Bootstrap->__construct()
+#3 {main}
+  thrown in /home/coredcoa/public_html/app/controllers/MilestoneController.php on line 83
+[02-Jul-2021 00:22:47 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/controllers/TaskDiscussionController.php on line 47
+[02-Jul-2021 00:24:03 Asia/Manila] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home/coredcoa/public_html/app/functions/uncommon.php on line 149
+[02-Jul-2021 00:30:46 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[02-Jul-2021 00:30:46 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 31
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined index: attachment in /home/coredcoa/public_html/app/functions/upload.php on line 130
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Trying to access array offset on value of type null in /home/coredcoa/public_html/app/functions/upload.php on line 130
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: email in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 40
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: project_id in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 41
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: project_id in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 49
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: email in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 50
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: name in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 51
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: position in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 52
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: role_description in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 53
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: rate_per_hour in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 54
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: category in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 56
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: email in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 65
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Undefined variable: email in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 69
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Notice:  Trying to get property 'title' of non-object in /home/coredcoa/public_html/app/models/ProjectInvitationModel.php on line 110
+[02-Jul-2021 00:35:55 Asia/Manila] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (to):  in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php:1068
+Stack trace:
+#0 /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php(990): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('to', '', '')
+#1 /home/coredcoa/public_html/app/helpers/MailMaker.php(57): PHPMailer\PHPMailer\PHPMailer->addAddress('', '')
+#2 /home/coredcoa/public_html/app/functions/mailers.php(121): MailMaker->setReciever('')
+#3 /home/coredcoa/public_html/app/models/ProjectInvitationModel.php(158): _mail('', 'Project Invitat...', '<div style='wid...', '')
+#4 /home/coredcoa/public_html/app/models/ProjectInvitationModel.php(17): ProjectInvitationModel->sendInvite('9')
+#5 /home/coredcoa/public_html/app/controllers/ProjectInvitationController.php(105): ProjectInvitationModel->createAndSendInvite(Array, '')
+#6 /home/coredcoa/public_html/app/core/Bootstrap.php(187): ProjectInvitationController in /home/coredcoa/public_html/app/libraries/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1068
+[02-Jul-2021 00:37:01 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function TaskController::show(), 0 passed in /home/coredcoa/public_html/app/core/Bootstrap.php on line 187 and exactly 1 expected in /home/coredcoa/public_html/app/controllers/TaskController.php:109
+Stack trace:
+#0 /home/coredcoa/public_html/app/core/Bootstrap.php(187): TaskController->show()
+#1 /home/coredcoa/public_html/app/core/Bootstrap.php(19): Bootstrap->loadApp()
+#2 /home/coredcoa/public_html/public/index.php(19): Bootstrap->__construct()
+#3 {main}
+  thrown in /home/coredcoa/public_html/app/controllers/TaskController.php on line 109
+[02-Jul-2021 00:54:44 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/controllers/TaskDiscussionController.php on line 47
+[03-Jul-2021 20:12:05 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[03-Jul-2021 20:12:05 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 31
+[03-Jul-2021 20:26:42 Asia/Manila] PHP Notice:  Undefined variable: added_by in /home/coredcoa/public_html/app/models/ProjectOnboardingModel.php on line 41
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'profile' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 20
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'type' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 25
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'first_name' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 30
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'last_name' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 34
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'email' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 38
+[06-Jul-2021 21:48:47 Asia/Manila] PHP Notice:  Trying to get property 'skills' of non-object in /home/coredcoa/public_html/app/views/profile/index.php on line 58
+[07-Jul-2021 00:03:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[07-Jul-2021 00:03:17 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 31
+[07-Jul-2021 10:47:09 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[07-Jul-2021 10:47:09 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 31
+[07-Jul-2021 12:39:56 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/controllers/TaskDiscussionController.php on line 47
+[07-Jul-2021 14:10:31 Asia/Manila] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL), expecting function (T_FUNCTION) or const (T_CONST) in /home/coredcoa/public_html/app/controllers/TaskDiscussionController.php on line 47
+[11-Jul-2021 00:46:37 Asia/Manila] PHP Warning:  Illegal string offset 'status' in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 185
+[11-Jul-2021 02:06:14 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 18
+[11-Jul-2021 02:06:14 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/DashboardController.php on line 31
+[11-Jul-2021 16:58:55 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 22
+[11-Jul-2021 16:58:57 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 22
+[11-Jul-2021 17:30:45 Asia/Manila] PHP Notice:  Trying to get property 'id' of non-object in /home/coredcoa/public_html/app/controllers/ProjectController.php on line 22
