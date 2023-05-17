@@ -52,7 +52,7 @@
         break;
 
         case 'up':
-            define('URL' , 'https://www.ntchris.online ');
+            define('URL' , 'https://www.ntchris.online');
             define('DBVENDOR' , 'mysql');
             define('DBHOST' , 'localhost');
             define('DBUSER' , 'korpzpru_th_main');
