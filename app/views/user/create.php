@@ -59,6 +59,7 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_month'))?></div>
+					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_day'))?></div>
 					<div class="col-md-4"><?php __($employmentForm->getCol('employment_date'))?></div>
 				</div>
 			</div>

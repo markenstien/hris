@@ -24,6 +24,7 @@
                         <th>Time In</th>
                         <th>Time Out</th>
                         <th>Duration</th>
+                        <th>Amount</th>
                         <th>Status</th>
                         <th>Remarks</th>
                     </thead>
@@ -36,6 +37,7 @@
                                 <td><?php echo $row->time_in?></td>
                                 <td><?php echo $row->time_out?></td>
                                 <td><?php echo timeInMinutesToHours(timeDifferenceInMinutes($row->time_in, $row->time_out), true)?></td>
+                                <td><?php echo $row->amount?></td>
                                 <td><?php echo $row->status?></td>
                                 <td><?php echo $row->remarks?></td>
                             </tr>
