@@ -84,6 +84,15 @@
 			EOF;
 		}
 
+		public function radio($name , $value = null, $attributes = null)
+		{
+			$attributes = is_null($attributes) ? $attributes : keypairtostr($attributes);
+
+			return <<<EOF
+				<input type="checkbox" name="{$name}" value="{$value}" {$attributes} />
+			EOF;
+		}
+
 		public function small($html , $attributes = NULL)
 		{
 			$attributes = is_null($attributes) ? $attributes : keypairtostr($attributes);

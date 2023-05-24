@@ -2,6 +2,7 @@
 <div class="col-md-8 mx-auto">
 	<?php Flash::show()?>
 	<?php __( $form->start() )?>
+	<?php __($employmentForm->getRow('employment_detail_id')) ?>
 	<div class="statbox widget box box-shadow">
 		<div class="widget-header">
 			<div class="row">
@@ -15,6 +16,19 @@
 		</div>
 
 		<div class="widget-content widget-content-area">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-4">
+						<?php if(!empty($user->profile)) :?>
+							<img src="<?php echo $user->profile?>" alt="" width="180px">
+						<?php endif?>
+					</div>
+					<div class="col-md-8">
+						<label for="#">Update profile picture</label>
+						<?php __($form->getCol('profile'))?>
+					</div>
+				</div>
+			</div>
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-4"><?php __($form->getCol('first_name')); ?></div>
@@ -59,6 +73,7 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_month'))?></div>
+					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_day'))?></div>
 					<div class="col-md-4"><?php __($employmentForm->getCol('employment_date'))?></div>
 				</div>
 			</div>

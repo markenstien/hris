@@ -11,3 +11,6 @@ create table employement_details(
     created_at timestamp default now(),
     updated_at timestamp default now() ON UPDATE now()
 );
+
+alter table employement_details
+    add column salary_per_day decimal(10,2) after salary_per_month;

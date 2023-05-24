@@ -2,12 +2,13 @@
 
     class EmploymentModel extends Model
     {
-        public $table = 'employement_details';
+        public $table = 'employment_details';
         public $_fillables = [
             'department_id',
             'position_id',
             'reports_to',
             'salary_per_month',
+            'salary_per_day',
             'employment_date',
             'user_id'
         ];
@@ -28,7 +29,7 @@
                 "SELECT user.id as user_id, user.*,
                     position.attr_name as position_name,
                     department.attr_name as department_name,
-                    ed.*
+                    ed.*,concat(manager.first_name,' ',manager.last_name) as manager_name
                     
                     FROM {$this->table} as ed 
                     LEFT JOIN users as user 
@@ -42,6 +43,7 @@
                     
                     LEFT JOIN users as manager
                     ON manager.id = ed.reports_to
+
                     {$where}"
             );
             return $this->db->resultSet();

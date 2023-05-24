@@ -64,7 +64,7 @@
 		*label , display_name , search_key,
 		*description , global_key , global_id
 		*/
-		public function upload( $file_data = [] , $file_name = '' )
+		public function upload($file_data = [] , $file_name = '' )
 		{
 
 			//get file
@@ -100,6 +100,10 @@
 					if($upload_ok) 
 					{
 						$this->addMessage("File uploaded!");
+
+						parent::_addRetval('file_data_array', $fillable_datas);
+						parent::_addRetval('id', $upload_ok);
+
 						return true;
 					}else{
 						$this->addError("Something went wrong!");

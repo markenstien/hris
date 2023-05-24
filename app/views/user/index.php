@@ -1,8 +1,8 @@
 <?php build('page-control')?>
-	<div class="widget widget-content-area page-command-container">
-		<a href="<?php echo _route('user:create')?>" 
-			class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>
-	</div>
+<div class="widget widget-content-area page-command-container">
+	<a href="<?php echo _route('user:create')?>" 
+		class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>
+</div>
 <?php endbuild()?>
 
 <?php build('content')?>

@@ -14,7 +14,8 @@
 		'sendAuth' => $controller.'/sendAuth',
 		'register' => $controller.'/register',
 		'verification' => $controller.'/verification',
-		'referrral'  => $controller .'/referrral'
+		'referrral'  => $controller .'/referrral',
+		'dashboard' => '/DashboardController/index'
 	];
 
 	$controller = '/AuthController';
@@ -103,6 +104,26 @@
 		'department' => $controller.'/index?type=DEPARTMENT',
 	];
 
+	$controller = '/ScheduleController';
+	$routes['schedule'] = [
+		'index' => $controller.'/index',
+		'edit' => $controller.'/edit',
+		'create' => $controller.'/create',
+		'delete' => $controller.'/destroy',
+		'show'   => $controller.'/show'
+	];
+
+
+	$controller = '/TimekeepingController';
+	$routes['tk'] = [
+		'index' => $controller.'/index',
+		'edit' => $controller.'/edit',
+		'create' => $controller.'/create',
+		'delete' => $controller.'/destroy',
+		'show'   => $controller.'/show',
+		'weblog' => $controller.'/webClockLogAction',
+		'formlog' => $controller.'/webFormAction',
+	];
 	
 
 	

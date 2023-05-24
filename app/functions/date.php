@@ -86,7 +86,7 @@
 
     function timeInMinutesToHours($timeInMinutes , $isHTML = false)
     {
-        if( !is_numeric($timeInMinutes) ){
+        if(!is_numeric($timeInMinutes) ){
             return '';
         }
 
@@ -101,6 +101,8 @@
         return $retVal;
     }
 
+    
+
     function timeDifference($date1 , $date2)
     {
         $starttimestamp = strtotime($date1);
@@ -110,6 +112,21 @@
         return $difference;
     }
 
+    function timeDifferenceInMinutes($startime , $endtime)
+	{
+		$time_in   = date_create($startime);
+		$time_out  = date_create($endtime);
+		$time_diff = date_diff($time_in,$time_out);
+
+
+		$hour    = (int) $time_diff->format('%h');
+		$minutes = (int) $time_diff->format('%i');
+
+		if($hour)
+			$hour = floor($hour * 60);
+
+		return $hour + $minutes;
+	}
 
     function timeConvertMinutesAndHours($time)
     {
@@ -180,4 +197,38 @@
             default:
             return ['jan' , 'feb' , 'march' , 'apr' , 'may' ,'jun' , 'jul' , 'aug' , 'sept' , 'oct' , 'nov','dec'];
         }
+    }
+
+
+
+    function dayOfWeeks($position = null)
+	{
+		$days = [
+			'sunday',
+			'monday',
+			'tuesday',
+			'wednesday',
+			'thursday',
+			'friday',
+			'saturday'
+		];
+
+		if(is_null($position))
+			return $days;
+		
+		return $days[$position];
+	}
+
+
+	function hoursMinsToMinutes($hours , $minutes)
+	{
+		$hoursInMinutes = intval($hours* 60);
+
+		$completeMinutes = intval($minutes);
+
+		return $hoursInMinutes + $completeMinutes;
+	}
+
+    function hoursToMinutes($hours) {
+        return $hours * 60;
     }

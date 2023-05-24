@@ -199,7 +199,8 @@
 				],
 
 				'attributes' => [
-					'id' => 'id_username'
+					'id' => 'id_username',
+					'placeholder' => 'Username'
 				]
 			]);
 		}
@@ -216,7 +217,8 @@
 				],
 
 				'attributes' => [
-					'id' => 'id_password'
+					'id' => 'id_password',
+					'placeholder' => 'Password'
 				]
 			]);
 		}

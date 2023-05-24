@@ -69,10 +69,6 @@
 
 				$res = parent::update($fillable_datas , $id);
 
-				if( isset($user_data['profile']) ){
-					$this->uploadProfile('profile' , $id);
-				}
-
 				$user_id = $id;
 				$this->_addRetval('id', $user_id);
 			}else
@@ -222,25 +218,16 @@
 
 		public function get($id)
 		{
-			$user = parent::get($id);
+			$user = $this->getAll([
+				'where' => [
+					'user.id' => $id
+				]
+			])[0] ?? false;
 
 			if(!$user) {
 				$this->addError("No User");
 				return false;
 			}
-			
-			if( isEqual($user->user_type , 'doctor') )
-			{
-				$this->doctor = model('DoctorModel');
-				$user->license_number = $this->doctor->getByUser($id)->license_number ?? null;
-			}
-
-			// if( !is_null($user->address_id)  )
-			// {
-			// 	$address_model = model('AddressModel');
-			// 	$user->address_atomic_text = $address_model->getConcat($user->address_id);
-			// }
-
 			return $user;
 		}
 
@@ -255,12 +242,40 @@
 		}
 
 
-		public function getAll($params = null )
+		public function getAll($params = [])
 		{
-			if(!is_null($params))
-				$params = $this->conditionConvert($params['where']);
+			$where = null;
+			$order = null;
 
-			return parent::getAssoc('first_name' , $params);
+			if(!empty($params['where'])) {
+				$where = " WHERE ".parent::conditionConvert($params['where']);
+			}
+
+			if(!empty($params['order'])) {
+				$order = " ORDER BY {$params['order']}";
+			}
+			
+			$this->db->query(
+				"SELECT user.*,ed.*, user.id as id,
+					position.attr_name as position_name,
+					position.attr_abbr_name as position_abbr,
+					department.attr_name as department_name,
+					department.attr_abbr_name as department_abbr
+
+					from {$this->table} as user
+					LEFT JOIN employment_details as ed on 
+					ed.user_id = user.id
+
+					LEFT JOIN employment_attributes as position
+					ON position.id = ed.position_id
+
+					LEFT JOIN employment_attributes as department
+					ON department.id = ed.department_id
+
+					{$where} {$order}"
+			);
+
+			return $this->db->resultSet();
 		}
 
 		public function getFilesAndFolders( $id )
@@ -345,7 +360,7 @@
 		*/
 		public function startAuth($id)
 		{
-			$user = parent::get($id);
+			$user = $this->get($id);
 
 			if(!$user){
 				$this->addError("Auth cannot be started!");
@@ -354,7 +369,7 @@
 
 			$auth = null;
 
-			while( is_null($auth) )
+			while(is_null($auth))
 			{
 				Session::set('auth' , $user);
 				$auth = Session::get('auth');

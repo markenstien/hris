@@ -8,7 +8,7 @@
                         <a href="<?php echo _route('user:edit', $employment->user_id)?>" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></a>
                     </div>
                     <div class="text-center user-info">
-                        <img src="<?php echo _path_tmp('assets/img/90x90.jpg')?>" alt="avatar">
+                        <img src="<?php echo $user->profile ?? _path_tmp('assets/img/90x90.jpg')?>" alt="avatar" style="width:200px">
                         <p class=""><?php echo $employment->first_name . ' ' . $employment->last_name?></p>
                         <div><i data-feather="coffee"></i> <?php echo $employment->position_name?></div>
                     </div>
@@ -26,6 +26,10 @@
                             <tr>
                                 <td><?php echo $employmentForm->getLabel('department_id')?></td>
                                 <td><?php echo $employment->department_name?></td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $employmentForm->getLabel('reports_to')?></td>
+                                <td><?php echo $employment->manager_name?></td>
                             </tr>
                             <tr>
                                 <td><?php echo $employmentForm->getLabel('position_id')?></td>
@@ -54,7 +58,36 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <p>Underconstruction...</p>
+                    <?php if(!$schedule) :?>
+                        <?php echo wLinkDefault(_route('schedule:create', null, ['user_id' => $user->id]), 'Create Schedule')?>
+                    <?php else:?>
+                        <table class="table table-bordered">
+                            <thead>
+                                <th>Day</th>
+                                <th>In</th>
+                                <th>Out</th>
+                                <th>Rest Day</th>
+                            </thead>
+
+                            <tbody>
+                                <?php $schedTodayId = $scheduleToday->id?>
+                                <?php foreach($schedule as $key => $row) :?>
+                                    <tr <?php echo isEqual($schedTodayId , $row->id) ? "style='background:var(--success)'" : '' ?>>
+                                        <td><?php echo $row->day?></td>
+                                        <td><?php echo date_long($row->time_in , 'h:i:s A')?></td>
+                                        <td><?php echo date_long($row->time_out , 'h:i:s A')?></td>
+                                        <td>
+                                            <?php if($row->is_off) :?>
+                                                <span class="badge badge-danger"> RD </span>
+                                            <?php else:?>
+                                                <span class="badge badge-primary"> WD </span>
+                                            <?php endif?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach?>
+                            </tbody>
+                        </table>
+                    <?php endif?>
                 </div>
             </div>
         </div>

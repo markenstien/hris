@@ -9,7 +9,7 @@
 		private $_employmentForm;
 		
 		protected $employmentModel,$governmentIDModel,
-		$model;
+		$model,$scheduleModel;
 
 
 		public function __construct()
@@ -20,6 +20,7 @@
 			$this->model = model('UserModel');
 			$this->employmentModel = model('EmploymentModel');
 			$this->governmentIDModel = model('GovernmentIDModel');
+			$this->scheduleModel = model('ScheduleModel');
 		}
 
 		public function verification($user_id_sealed)
@@ -202,13 +203,41 @@
 			if(isSubmitted())
 			{
 				$post = request()->posts();
-
-				$post['profile'] = 'profile';
 				
-				$res = $this->model->save($post , $id);
 
-				if($res) {
-					Flash::set( "User updated !");
+				if(!upload_empty('profile')) {
+					//apply change picture
+					$response = $this->_attachmentModel->upload([
+						'display_name',
+						'label' => 'profile',
+						'global_key' => 'USER_PROFILE_PICTURE',
+						'global_id' => $id
+					], 'profile');
+
+					if($response) {
+						$responseData = $this->_attachmentModel->_getRetval('file_data_array');
+						$post['profile'] = $responseData['full_url'];
+						
+					}
+				}
+
+				$userUpdate = $this->model->save($post , $id);
+
+				if(isset($post['profile']) && $userUpdate) {
+					$this->model->startAuth($id);
+				}
+
+				$employementUpdate = $this->employmentModel->update([
+					'department_id' => $post['department_id'],
+					'position_id' => $post['position_id'],
+					'employment_date' => $post['employment_date'],
+					'reports_to' => $post['reports_to'],
+					'salary_per_month' => $post['salary_per_month'],
+					'salary_per_day' => $post['salary_per_day']
+				], $post['employment_detail_id']);
+
+				if($userUpdate && $employementUpdate) {
+					Flash::set( "User updated!");
 					return redirect( _route('user:show' , $id));
 				}else{
 					Flash::set( $this->model->getErrorString() );
@@ -223,12 +252,19 @@
 			$employment = $this->employmentModel->getByUser($id);
 
 			$this->_employmentForm->setValueObject($employment);
+			
+			$this->_employmentForm->add([
+				'type' => 'hidden',
+				'name' => 'employment_detail_id',
+				'value' => $employment->id
+			]);
 
 			$data = [
 				'title' => 'Create User',
 				'form'  => $this->_form,
 				'user'   => $user,
-				'employmentForm' => $this->_employmentForm
+				'employmentForm' => $this->_employmentForm,
+				'employment' => $employment
 			];
 
 			return $this->view('user/edit' , $data);
@@ -259,7 +295,7 @@
 				'employmentForm' => $this->_employmentForm
 			];
 
-			if( !isset($_GET['folder']) )
+			if(!isset($_GET['folder']))
 			{
 				$filesAndFolders = $this->model->getFilesAndFolders($id);
 				$data['filesAndFolders'] = $filesAndFolders;
@@ -269,6 +305,9 @@
 				$folderFilesAndFolders = $folderModel->get($_GET['folder']);
 				$data['folderFilesAndFolders'] = $folderFilesAndFolders;
 			}
+			
+			$data['schedule'] = $this->scheduleModel->getByUser($id);
+			$data['scheduleToday'] = $this->scheduleModel->getToday($id);
 
 			$this->data = array_merge($data, $this->data);
 			return $this->view('user/show', $this->data);

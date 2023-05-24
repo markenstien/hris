@@ -62,7 +62,7 @@
 	{
         $user = Session::get('auth');
 
-        if( !is_null($prop)){
+        if(!is_null($prop)){
             if(is_array($user))
                 return $user[$prop];
             if(is_object($user))

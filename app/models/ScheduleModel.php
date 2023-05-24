@@ -1,34 +1,57 @@
-<?php 
+<?php 	
 
 	class ScheduleModel extends Model
 	{
-		public $table = 'schedule_setting';
+		public $table = 'schedules';
 
-		public function create($schedule_data)
+
+		public function newSchedule($values)
 		{
+			$sql = "INSERT INTO $this->table(user_id , day , time_in , time_out , is_off) VALUES ";
 
-		}
+			$schedules = $values['schedules'];
+			$userId = $values['user_id'];
 
-		public function getSchedules()
-		{
-			return parent::getAssoc('id');
-		}
 
-		public function updateBulk($schedules)
-		{
-			$res = false;
-
-			foreach($schedules as $key_or_id => $sched) {
-				$res = parent::update($sched , $key_or_id);
+			if($this->getByUser($userId)){
+				$this->addError("User Already has schedule");
+				return false;
 			}
 
-			return $res;
+			foreach( $schedules as $row => $schedule)
+			{
+				if($row > 0)
+					$sql .= ',';
+
+				$sql .= " ('{$userId}','{$schedule['day']}' , '{$schedule['time_in']}' , '{$schedule['time_out']}' , '{$schedule['rd']}') ";
+			}
+
+			$this->db->query($sql);
+
+			return $this->db->insert();
 		}
 
-		public function getByAppointmentByDay($day)
+		public function getByUser($userId)
 		{
-			return parent::single([
-				'day' => $day
+			$schedule = parent::all([
+				'user_id' => $userId
 			]);
+
+			return $schedule;
+		}
+
+		/*
+		*get user schedule today
+		*/
+		public function getToday($userId)
+		{
+			$todayDayName = date('l'); //today day name
+
+			$schedule = parent::single([
+				'day' => $todayDayName,
+				'user_id' => $userId
+			]);
+
+			return $schedule;
 		}
 	}
