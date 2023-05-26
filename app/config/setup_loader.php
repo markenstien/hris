@@ -59,7 +59,7 @@
             define('DBPASS' , 'Y[@h=Ytz;(f}');
             define('DBNAME' , 'korpzpru_hris');
 
-            define('BASECONTROLLER' , 'UserController');
+            define('BASECONTROLLER' , 'AuthController');
             define('BASEMETHOD' , 'index');
         break;
     }
