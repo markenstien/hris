@@ -5,6 +5,8 @@
 	load(['Form'], CORE);
 
 	use Core\Form;
+use Model;
+use Module;
 
 	class UserForm extends Form
 	{
@@ -211,7 +213,7 @@
 				'type' => 'password',
 				'name' => 'password',
 				'class' => 'form-control',
-				'required' => '',
+				'required' => true,
 				'options' => [
 					'label' => 'Password',
 				],
@@ -225,16 +227,15 @@
 
 		public function addUserType()
 		{
+			$userTypes = Module::get('user')['types'];
 			$this->add([
 				'type' => 'select',
 				'name' => 'user_type',
 				'class' => 'form-control',
-				'required' => '',
+				'required' => true,
 				'options' => [
 					'label' => 'User Type',
-					'option_values' => [
-						'employee','administrator','sub-administrator','moderator'
-					]
+					'option_values' => $userTypes
 				],
 
 				'attributes' => [

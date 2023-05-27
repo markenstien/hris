@@ -1,5 +1,25 @@
 <?php
 
+    function _routeInstance($key, $controller, &$routes, $namedRoutes = []) {
+        $controller = '/'.$controller;
+        $defeaultNamedRoutes = [
+            'index' => $controller.'/index',
+            'edit' => $controller.'/edit',
+            'create' => $controller.'/create',
+            'delete' => $controller.'/destroy',
+            'show'   => $controller .'/show'
+        ];
+
+        if(!empty($namedRoutes)) {
+            foreach($namedRoutes as $routeKey => $row) {
+                $namedRoutes[$routeKey] = $controller.'/'.$row;
+            }
+            $routes[$key] = array_merge($defeaultNamedRoutes, $namedRoutes);
+        } else {
+            $routes[$key] = $defeaultNamedRoutes;
+        }
+    }
+
     /*
 	*Modules quick functions
 	*/
@@ -92,7 +112,7 @@
             }
         }
 
-        if( is_array($parameter) && !empty($parameter))
+        if(is_array($parameter) && !empty($parameter))
         {
             if( empty($parameterString) )
                 $parameterString .= '?';
@@ -111,7 +131,7 @@
         $routesDeclaredKeys = array_keys($routesDeclared);
 
 
-        if( !in_array($routeKey , $routesDeclaredKeys)  ){
+        if(!in_array($routeKey , $routesDeclaredKeys)  ){
             echo die("Route {$routeKey} doest not exists");
         }
 
@@ -119,7 +139,7 @@
 
         $calledRouteKeys = array_keys($calledRoute);
 
-        if( !in_array($method, $calledRouteKeys)){
+        if(!in_array($method, $calledRouteKeys)){
             echo die("Route {$routeKey} doest not have {$method} method does not exist!");
         }
         

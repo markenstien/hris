@@ -2,33 +2,19 @@
 <div class="col-md-8 mx-auto">
 	<?php Flash::show()?>
 	<?php __( $form->start() )?>
-	<?php __($employmentForm->getRow('employment_detail_id')) ?>
 	<div class="statbox widget box box-shadow">
 		<div class="widget-header">
 			<div class="row">
 				<div class="col-xl-12 col-md-12 col-sm-12 col-12">
 					<h4>Personal Information</h4>
-					<?php echo wLinkDefault(_route('user:show', $user->id),'', [
-						'icon' => 'arrow-left-circle'
-					])?>
+                    <?php echo wLinkDefault(_route('user:index'), 'Back to list', [
+                        'icon' => 'arrow-left-circle'
+                    ])?>
 				</div>
 			</div>
 		</div>
 
 		<div class="widget-content widget-content-area">
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-4">
-						<?php if(!empty($user->profile)) :?>
-							<img src="<?php echo $user->profile?>" alt="" width="180px">
-						<?php endif?>
-					</div>
-					<div class="col-md-8">
-						<label for="#">Update profile picture</label>
-						<?php __($form->getCol('profile'))?>
-					</div>
-				</div>
-			</div>
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-4"><?php __($form->getCol('first_name')); ?></div>
@@ -59,33 +45,13 @@
 				</div>
 			</div>
 		</div>
-		<?php if(isEqual($user->user_type, 'employee')) :?>
-		<div class="widget-content widget-content-area">
-			<h4>Work Details</h4>
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-4"><?php __($employmentForm->getCol('department_id'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('position_id'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('reports_to'))?></div>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_month'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_day'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('employment_date'))?></div>
-				</div>
-			</div>
-		</div>
-		<?php endif?>
-
 		<div class="widget-content widget-content-area">
 			<h4>Credentials</h4>
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-4"><?php __($form->getCol('username'));?></div>
 					<div class="col-md-4"><?php __($form->getCol('password'));?></div>
+					<div class="col-md-4"><?php __($form->getCol('user_type'));?></div>
 				</div>
 
 				<label for="send_cred_to_user">

@@ -144,10 +144,30 @@
 
 		public function index()
 		{
+			$req = request()->inputs();
+			$userType = $req['user_type'] ?? 'employee';
+
+			if(isEqual($userType,'employee')) {
+				$users = $this->model->getAll([
+					'where' => [
+						'user_type' => 'employee'
+					]
+				]);
+			} else {
+				$users = $this->model->getAll([
+					'where' => [
+						'user_type' => [
+							'condition' => 'not equal',
+							'value' => 'employee'
+						]
+					]
+				]);
+			}
 			
 			$data = [
-				'users' => $this->model->getAll(),
-				'title' => 'Users'
+				'users' => $users,
+				'title' => 'Users',
+				'userType' => $userType
 			];
 
 			$data = array_merge($data, $this->data);
@@ -156,12 +176,13 @@
 
 		public function create()
 		{
+			$req = request()->inputs();
+			$userType = $req['user_type'] ?? 'employee';
 
 			if(isSubmitted()) {
 				$post = request()->posts();
 
 				$post['is_verified'] = true;
-				$post['user_type'] = 'employee';
 				$res = $this->model->create($post , 'profile');
 
 				//create user is an employee
@@ -186,14 +207,17 @@
 
 				return redirect(_route('user:index'));
 			}
-
+		
 			$data = [
 				'title' => 'Create User',
 				'form'  => $this->_form,
 				'employmentForm' => $this->_employmentForm
 			];
-
-			return $this->view('user/create' , $data);
+			if(!isEqual($userType,'employee')) {
+				return $this->view('user/create_staff_admin', $data);
+			} else {
+				return $this->view('user/create' , $data);
+			}
 		}
 
 
@@ -310,7 +334,12 @@
 			$data['scheduleToday'] = $this->scheduleModel->getToday($id);
 
 			$this->data = array_merge($data, $this->data);
-			return $this->view('user/show', $this->data);
+
+			if(isEqual($user->user_type, 'employee')) {
+				return $this->view('user/show', $this->data);
+			} else {
+				return $this->view('user/show_staff_admin', $this->data);
+			}
 		}
 
 		public function sendAuth()

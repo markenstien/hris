@@ -81,13 +81,6 @@
 			}
 		}
 
-		public function getValue($name) {
-			if($this->checkExistKey($name)) {
-				$item = $this->getItem($name);
-				return $item['value'];
-			}
-		}
-
 		public function label($name)
 		{
 			$item = $this->getRaw($name);
@@ -116,7 +109,7 @@
 				case 'number':
 				case 'date':
 				case 'time':
-					return $this->_form->call($rawItem['type'] , $rawItem['name'], $rawItem['value'] , $rawItem['attributes'] );
+					return $this->_form->call( $rawItem['type'] , $rawItem['name'], $rawItem['value'] , $rawItem['attributes'] );
 				break;
 
 				case 'password':
@@ -347,20 +340,20 @@
 					$btn = $this->get($item['name']);
 
 					$html .= <<<EOF
-						<div>
+						<div class='mt-2'>
 							{$btn}
 						</div>
 					EOF;
 
 				}else
 				{
-					$label_input_bundle = $this->getRow($item['name']);
-
-					$html .= <<<EOF
-						<div class='form-group mb-2'>
-							{$label_input_bundle}
-						</div>
-					EOF;
+					if($inputType == 'row') {
+						$label_input_bundle = $this->getRow($item['name']);
+					}else{
+						$label_input_bundle = $this->getCol($item['name']);
+					}
+					
+					$html .= $label_input_bundle;
 				}
 			}
 

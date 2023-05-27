@@ -89,6 +89,7 @@
 		'create' => $controller.'/addStock',
 		'delete' => $controller.'/destroy',
 		'show'   => $controller.'/show',
+		'verification' => $controller .'/verification',
 		'log'   => $controller.'/log',
 	];
 
@@ -125,6 +126,9 @@
 		'formlog' => $controller.'/webFormAction',
 	];
 	
+	_routeInstance('leave', 'LeaveController', $routes, [
+		'approve' => 'approve'
+	]);
 
 	
 	return $routes;

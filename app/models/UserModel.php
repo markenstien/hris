@@ -85,7 +85,7 @@
 
 		private function validate(&$user_data , $id = null)
 		{	
-			if(isset($user_data['email']))
+			if(!empty($user_data['email']))
 			{
 				$is_exist = $this->getByKey('email' , $user_data['email'])[0] ?? '';
 
@@ -95,7 +95,7 @@
 				}
 			}
 
-			if(isset($user_data['username']))
+			if(!empty($user_data['username']))
 			{
 				$is_exist = $this->getByKey('username' , $user_data['username'])[0] ?? '';
 
@@ -105,7 +105,7 @@
 				}
 			}
 
-			if(isset($user_data['phone_number']))
+			if(!empty($user_data['phone_number']))
 			{
 				$user_data['phone_number'] = str_to_mobile($user_data['phone_number']);
 

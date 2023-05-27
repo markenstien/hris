@@ -1,5 +1,11 @@
 <?php
-        
+    function str_to_str_only($s) {
+        return preg_replace("/[^A-Z]+/i", "", $s);
+    }
+    
+    function str_to_number_only($s) {
+        return preg_replace("/[^0-9]+/", "", $s);
+    }
     /*check if tomatch is array*/
     function isEqual($subject , $toMatch)
     {

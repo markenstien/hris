@@ -144,10 +144,41 @@
                     </li>
 
                     <li class="menu"  aria-expanded="true">
-                        <a href="<?php echo _route('user:index')?>" aria-expanded="false" class="dropdown-toggle">
+                        <a href="<?php echo _route('user:index', null, [
+                            'user_type' => 'staff_and_admin'
+                        ])?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="users"></i>
-                                <span> User </span>
+                                <span> Staff and Admin </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu"  aria-expanded="true">
+                        <a href="<?php echo _route('user:index', null, [
+                            'user_type' => 'Employee'
+                        ])?>" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <i data-feather="users"></i>
+                                <span> Employees </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu"  aria-expanded="true">
+                        <a href="<?php echo _route('govid:index', null)?>" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <i data-feather="users"></i>
+                                <span> GovIds </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="menu">
+                        <a href="<?php echo _route('leave:index')?>" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <i data-feather="users"></i>
+                                <span> Leave </span>
                             </div>
                         </a>
                     </li>
