@@ -21,6 +21,8 @@
 			$this->employmentModel = model('EmploymentModel');
 			$this->governmentIDModel = model('GovernmentIDModel');
 			$this->scheduleModel = model('ScheduleModel');
+			
+			$this->data['_form'] = $this->_form;
 		}
 
 		public function verification($user_id_sealed)
@@ -183,6 +185,11 @@
 				$post = request()->posts();
 
 				$post['is_verified'] = true;
+
+				if(empty($post['password']) || strlen($post['password'] < 4)) {
+					Flash::set("Password length must be alteast 4 characters long");
+					return request()->return();
+				}
 				$res = $this->model->create($post , 'profile');
 
 				//create user is an employee
@@ -345,7 +352,7 @@
 
 		public function sendAuth()
 		{
-			if( isSubmitted() )
+			if(isSubmitted())
 			{
 				$post = request()->posts();
 

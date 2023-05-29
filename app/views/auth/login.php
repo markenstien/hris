@@ -76,8 +76,7 @@
             </div>
         </div>
         <div class="form-image">
-            <div class="l-image">
-            </div>
+            <img src="<?php echo _path_upload_get('logo.png')?>" alt="">
         </div>
     </div>
 

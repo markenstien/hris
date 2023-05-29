@@ -7,7 +7,7 @@
     {
 
         const DEFAULT_CREATE_VIEW = 'web_manual';
-        private $model;
+        public $model,$employmentModel;
 
         public $timesheetForm;
 
@@ -15,6 +15,7 @@
         {
             parent::__construct();
             $this->model = model('TimesheetModel');
+            $this->employmentModel = model('EmploymentModel');
             $this->timesheetForm = new TimesheetForm();
         }
         /**
@@ -23,9 +24,17 @@
         public function index() {
 
             if(isEqual($this->data['whoIs']->user_type, 'employee')) {
+                $underlings = $this->employmentModel->getUnderlings($this->data['whoIs']->id);
+                $underlingsIds = getListObject($underlings, 'user_id');
+                $underlingsIds[] = $this->data['whoIs']->id;
+
+
                 $this->data['timesheets'] = $this->model->getAll([
                     'where' => [
-                        'tklog.user_id' => $this->data['whoIs']->id
+                        'tklog.user_id' => [
+                            'condition' => 'in',
+                            'value' => $underlingsIds
+                        ]
                     ],
                     'order' => 'tklog.id desc'
                 ]);
@@ -34,7 +43,7 @@
                     'order' => 'tklog.id desc'
                 ]);
             }
-            return $this->view('timesheet/index', $this->data);
+            return $this->view('timekeeping/index', $this->data);
         }
         /**
          * manual timesheet 
@@ -79,6 +88,34 @@
             }
         }
 
+        public function edit($id) {
+            if(isSubmitted()) {
+                $post = request()->posts();
+                $timeInOut = $this->_formatTimeInOut($post['start_date'], $post['end_date'], $post['time_in'], $post['time_out']);
+                
+                $postData = array_merge($timeInOut, $post);
+                $this->model->update($this->model->getFillablesOnly($postData), $post['id']);
+                Flash::set("Sheet updated");
+                return redirect(_route('tk:index'));
+            }
+            $timesheet = $this->model->get($id);
+            $this->timesheetForm->setValueObject($timesheet);
+
+            $this->timesheetForm->addId($id);
+            
+            $this->timesheetForm->setValue('start_date', today($timesheet->time_in));
+            $this->timesheetForm->setValue('end_date', today($timesheet->time_out));
+            
+            $this->timesheetForm->setValue('time_in', timeNow($timesheet->time_in));
+            $this->timesheetForm->setValue('time_out', timeNow($timesheet->time_out));
+
+            
+            $this->data['timesheet'] = $timesheet;
+            $this->data['form'] = $this->timesheetForm;
+
+            return $this->view('timekeeping/edit', $this->data);
+        }
+
         public function webClockLogAction() {
             $req = request()->inputs();
             $this->model->log(whoIs('id'));
@@ -87,17 +124,34 @@
 
         public function webFormAction() {
             $post = request()->posts();
-            $dateTimeStart = date('Y-m-d H:i', strtotime($post['start_date'] . ' ' .$post['time_in']));
-            $dateTimeEnd = date('Y-m-d H:i', strtotime($post['end_date'] . ' ' .$post['time_out']));
+            
+            $timeInOut = $this->_formatTimeInOut($post['start_date'], $post['end_date'], $post['time_in'], $post['time_out']);
 
-            $this->model->addFromForm([
-                'time_in' => $dateTimeStart,
-                'time_out'   => $dateTimeEnd,
+            $paramData = array_merge($timeInOut, [
                 'user_id' => $post['user_id'],
                 'remarks' => $post['remarks']
             ]);
 
+            $this->model->addFromForm($paramData);
+
             Flash::set("Timesheet Placed");
+            return redirect(_route('tk:index'));
+        }
+
+        private function _formatTimeInOut($startDate, $endDate, $timeIn, $timeOut) {
+            $dateTimeStart = date('Y-m-d H:i', strtotime($startDate . ' ' .$timeIn));
+            $dateTimeEnd = date('Y-m-d H:i', strtotime($endDate . ' ' .$timeOut));
+
+            return [
+                'time_in' => $dateTimeStart,
+                'time_out' => $dateTimeEnd
+            ];
+        }
+
+        public function approve($id) {
+            $this->model->approve($id);
+
+            Flash::set("Timesheet approved");
             return redirect(_route('tk:index'));
         }
     }

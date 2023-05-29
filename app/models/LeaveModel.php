@@ -47,11 +47,16 @@
 
             $this->db->query(
                 "SELECT el.*, 
-                    concat(user.first_name, ' ' ,user.last_name) as user_full_name,
+                    concat(user.first_name, ' ' ,user.last_name) as user_full_name,ee.reports_to as reports_to,
                     ifnull(concat(approver.first_name, ' ', approver.last_name), 'Not yet approved') as approver_full_name
+                    
                     FROM {$this->table} as el
+                    
                     LEFT JOIN users as user
                     on el.user_id = user.id
+
+                    LEFT JOIN employment_details as ee
+                    on ee.user_id = el.user_id
 
                     LEFT JOIN users as approver
                     on approver.id = el.approved_by

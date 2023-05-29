@@ -2,6 +2,8 @@
     namespace Form;
 
     use Core\Form;
+use Module;
+
     load(['Form'],CORE);
 
     class TimesheetForm extends Form {
@@ -14,6 +16,7 @@
             $this->addEndDate();
             $this->addStartTime();
             $this->addEndTime();
+            $this->addSheetCategory();
             $this->addRemarks();
             $this->addUser();
             $this->customSubmit();
@@ -77,6 +80,19 @@
                 'options' => [
                     'label' => 'Remarks'
                 ]
+            ]);
+        }
+
+        public function addSheetCategory() {
+            $this->add([
+                'type' => 'select',
+                'name' => 'sheet_category',
+                'class' => 'form-control',
+                'options' => [
+                    'label' => 'Sheet Category',
+                    'option_values' => Module::get('timesheet')['sheet_categories']
+                ],
+                'required' => true
             ]);
         }
 

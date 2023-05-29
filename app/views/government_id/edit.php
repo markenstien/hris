@@ -14,13 +14,26 @@
 		</div>
 
 		<div class="widget-content widget-content-area">
+            <?php
+                $check = '<i data-feather="check-circle" class="text-success" title="verified"></i>';
+                $unchecked = '<i data-feather="x-circle" class="text-danger" title="un-verified"></i>';
+            ?>
             <?php foreach($governmentIds as $key => $row) :?>
                 <form method="post">
                     <?php Form::hidden('id', $row->id)?>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3"><?php echo $row->organization?></div>
-                            <div class="col-md-6"><?php Form::text('id_number', $row->id_number, ['class' => 'form-control', 'required' => true])?></div>
+                            <div class="col-md-4">
+                                <?php if($row->is_verified) :?>
+                                    <?php Form::text('id_number', $row->id_number, ['class' => 'form-control', 'required' => true, 'readonly' => true])?>
+                                <?php else:?>
+                                    <?php Form::text('id_number', $row->id_number, ['class' => 'form-control', 'required' => true])?>
+                                <?php endif?>
+                            </div>
+                            <div class="col-md-2">
+                                <?php echo $row->is_verified ? $check:$unchecked?>
+                            </div>
                             <div class="col-md-3">
                                 <?php Form::submit('btn_update_org', 'Save')?>
                             </div>

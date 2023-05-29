@@ -2,6 +2,7 @@
 <div class="col-md-8 mx-auto">
 	<?php Flash::show()?>
 	<?php __( $form->start() )?>
+	<?php __(Form::hidden('user_type','employee'))?>
 	<div class="statbox widget box box-shadow">
 		<div class="widget-header">
 			<div class="row">
@@ -34,7 +35,6 @@
 			<h4>Contact</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('email')); ?></div>
 					<div class="col-md-4"><?php __($form->getCol('phone_number')); ?></div>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 			<h4>Credentials</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('username'));?></div>
+					<div class="col-md-4"><?php __($form->getCol('email'));?></div>
 					<div class="col-md-4"><?php __($form->getCol('password'));?></div>
 				</div>
 

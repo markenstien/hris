@@ -68,7 +68,7 @@
 			<h4>Credentials</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('username'));?></div>
+					<div class="col-md-4"><?php __($form->getCol('email'));?></div>
 					<div class="col-md-4"><?php __($form->getCol('password'));?></div>
 				</div>
 

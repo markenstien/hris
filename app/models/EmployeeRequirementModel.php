@@ -55,6 +55,7 @@
                 ]);
             }
 
+            $this->_addRetval('id', $requirementId);
             return $requirementId;
         }
 

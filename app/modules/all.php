@@ -23,6 +23,13 @@
         ]
     ];
 
+    $module['timesheet'] = [
+    'sheet_categories' => [
+            'REGULAR',
+            'OT'
+        ]
+    ];
+
     $module['ee_leave'] = [
         'categories' => [
             'Vacation leave',

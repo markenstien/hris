@@ -19,24 +19,24 @@
     //    }
     // }
     
-    function nowMilitary()
+    function nowMilitary($date = null)
     {
-        return date('Y-m-d H:i:s');
+        return is_null($date) ? date('Y-m-d H:i:s') : date('Y-m-d H:i:s',strtotime($date));
     }
-    function now()
+    function now($date = null)
     {
-        return date('Y-m-d h:i:s A');
-    }
-
-
-    function today()
-    {
-        return date('Y-m-d');
+        return is_null($date) ? date('Y-m-d h:i:s A') : date('Y-m-d h:i:s A',strtotime($date));
     }
 
-    function timeNow()
+
+    function today($date = null)
     {
-        return date('H:i:s');
+        return is_null($date) ? date('Y-m-d') : date('Y-m-d',strtotime($date));
+    }
+
+    function timeNow($date = null)
+    {
+        return is_null($date) ? date('H:i') : date('H:i',strtotime($date));
     }
     function time_since($date) 
     {

@@ -19,6 +19,7 @@ CREATE TABLE `hr_time_sheets` (
 ) ENGINE=InnoDB AUTO_INCREMENT=64711 DEFAULT CHARSET=utf8mb4;
 
 
+alter table hr_time_sheets add column sheet_category char(50) default 'REGULAR';
 
 CREATE TABLE `user_meta` (
   `id` int(10) NOT NULL AUTO_INCREMENT,

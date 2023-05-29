@@ -20,7 +20,11 @@
             $_fillables['eerr_reference'] = $this->token->createMix();
             $_fillables['eerr_status'] = 'pending';
             $_fillables['date_of_entry'] = now();
-            return parent::store($_fillables);
+
+            $id = parent::store($_fillables);
+
+            $this->_addRetval('id', $id);
+            return $id;
         }
 
         public function getAll($params = []) {
@@ -79,10 +83,17 @@
         }
 
         public function approve($id) {
-            return parent::update([
-                'eerr_status' => 'approved',
-                'approved_by' => whoIs('id'),
-                'approved_date' => now()
-            ], $id);
+            $respond = parent::get($id);
+            if($respond) {
+                $this->_addRetval('requirement_id', $respond->cert_id);
+                return parent::update([
+                    'eerr_status' => 'approved',
+                    'approved_by' => whoIs('id'),
+                    'approved_date' => now()
+                ], $id);
+            } else {
+                return false;
+            }
+            
         }
     }

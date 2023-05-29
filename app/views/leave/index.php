@@ -12,8 +12,9 @@
         <h4>Leave Management</h4>
     </div>
     <div class="widget-content widget-content-area">
+        <?php Flash::show()?>
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered dataTable">
                 <thead>
                     <th>#</th>
                     <th>User</th>
@@ -38,13 +39,22 @@
                             <td><?php echo $row->date_filed?></td>
                             <td><?php echo $row->approver_full_name?></td>
                             <td>
-                                <?php echo wLinkDefault(_route('leave:edit', $row->id), '', [
-                                    'icon' => 'edit'
-                                ])?>
+
+                                <?php
+                                    if(isEqual(whoIs('id'), $row->user_id)) 
+                                        echo wLinkDefault(_route('leave:edit', $row->id), '', [
+                                            'icon' => 'edit'
+                                        ]);
+                                ?>
                                 &nbsp;
-                                <?php echo wLinkDefault(_route('leave:approve', $row->id), '', [
-                                    'icon' => 'check-circle'
-                                ])?>
+
+                                <?php 
+                                    if(isEqual($row->reports_to, whoIs('id')) || isManagement()) {
+                                        echo wLinkDefault(_route('leave:approve', $row->id), '', [
+                                            'icon' => 'check-circle'
+                                        ]);
+                                    }
+                                ?>
                             </td>
                         </tr>
                     <?php endforeach?>

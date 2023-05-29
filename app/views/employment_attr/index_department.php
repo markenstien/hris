@@ -16,7 +16,7 @@
 
     <div class="widget-content widget-content-area">
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered dataTable">
                 <thead>
                     <th>#</th>
                     <th>Acronym(abbr)</th>

@@ -213,7 +213,6 @@ use Module;
 				'type' => 'password',
 				'name' => 'password',
 				'class' => 'form-control',
-				'required' => true,
 				'options' => [
 					'label' => 'Password',
 				],

@@ -72,12 +72,29 @@
         return $user ?? '';
 	}
 
+    function isManagement($user = null) {
+        $user = is_null($user) ? whoIs() : $user;
+
+        if(isEqual($user->user_type, Module::get('user')['types'])) {
+            return true;
+        }
+        return false;
+    }
+
+    function isAdmin($user = null) {
+        $user = is_null($user) ? whoIs() : $user;
+
+        if(isEqual($user->user_type, ['Administrator', 'Sub-Administrator'])) {
+            return true;
+        }
+        return false;
+    }
 
     function accountIsSetup()
     {
         $user = whoIs();
 
-        if( empty($user) )
+        if(empty($user))
             return false;
 
         if( isEqual($user->type , null) )
@@ -294,6 +311,16 @@
         return is_null($key) ? $auth : $auth->$key;
     }
 
+    function getListObject($arrayOfObjects, $property) {
+        $retVal = [];
+        foreach($arrayOfObjects as $key => $object)
+		{
+            array_push($retVal, $object->$property);
+		}
+
+        return $retVal;
+    }
+
     function getRowObject($arrayObject , $property)
 	{
 		$arrayOfObjects = array();
@@ -377,3 +404,4 @@
         return curl_exec ($ch);
         curl_close ($ch);
     }
+

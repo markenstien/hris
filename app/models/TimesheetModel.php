@@ -405,10 +405,20 @@
 
 			$this->db->query(
 				"SELECT tklog.*,
-					concat(user.first_name , ' ',user.last_name) as full_name 
+					concat(user.first_name , ' ',user.last_name) as full_name,
+					ea.attr_name as position_name,
+					ea.attr_abbr_name as position_abbr_name,
+					ed.reports_to as reports_to
+
 					FROM {$this->table} as tklog
 					LEFT JOIN users as user 
 					on user.id = tklog.user_id
+
+					LEFT JOIN employment_details as ed
+					on ed.user_id = user.id 
+					
+					LEFT JOIN employment_attributes as ea
+					on ea.id = ed.position_id
 					{$where}"
 			);
 
@@ -428,8 +438,20 @@
 			return parent::store($formData);
 		}
 
+		public function approve($id) {
+			$user = whoIs();
+
+			return parent::update([
+				'approved_by' => $user->id,
+				'status' => 'approved',
+				'remarks' => 'approved by '.$user->first_name . ' '. $user->last_name
+			], $id);
+		}
 		private function _computePayByTime($userId, $workHoursInMinutes) {
 			$user = $this->user_model->get($userId);
+			if($user->salary_per_day <= 0)
+				return 0;
+
 			$amountTotal = ($user->salary_per_day / 8) * ($workHoursInMinutes / 60);
 			return $amountTotal;
 		}

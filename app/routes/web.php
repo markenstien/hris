@@ -115,16 +115,11 @@
 	];
 
 
-	$controller = '/TimekeepingController';
-	$routes['tk'] = [
-		'index' => $controller.'/index',
-		'edit' => $controller.'/edit',
-		'create' => $controller.'/create',
-		'delete' => $controller.'/destroy',
-		'show'   => $controller.'/show',
-		'weblog' => $controller.'/webClockLogAction',
-		'formlog' => $controller.'/webFormAction',
-	];
+	_routeInstance('tk', 'TimekeepingController', $routes, [
+		'weblog' => 'webClockLogAction',
+		'formlog' => 'webFormAction',
+		'approve' => 'approve'
+	]);
 	
 	_routeInstance('leave', 'LeaveController', $routes, [
 		'approve' => 'approve'

@@ -5,7 +5,11 @@
                 <div class="widget-content widget-content-area">
                     <div class="d-flex justify-content-between">
                         <h3 class="">Personal</h3>
-                        <a href="<?php echo _route('user:edit', $employment->user_id)?>" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></a>
+                        <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
+                            <a href="<?php echo _route('user:edit', $employment->user_id)?>" class="mt-2 edit-profile">
+                                <i data-feather="edit"></i>
+                            </a>
+                        <?php endif?>
                     </div>
                     <div class="text-center user-info">
                         <img src="<?php echo $user->profile ?? _path_tmp('assets/img/90x90.jpg')?>" alt="avatar" style="width:200px">
@@ -29,29 +33,41 @@
                             </tr>
                             <tr>
                                 <td><?php echo $employmentForm->getLabel('reports_to')?></td>
-                                <td><?php echo $employment->manager_name?></td>
+                                <td>
+                                    <?php echo wLinkDefault(_route('user:show', $employment->reports_to),$employment->manager_name);?>
+                                </td>
                             </tr>
                             <tr>
                                 <td><?php echo $employmentForm->getLabel('position_id')?></td>
                                 <td><?php echo $employment->position_name?></td>
                             </tr>
                             <tr>
-                                <td><?php echo $employmentForm->getLabel('employment_date')?></td>
-                                <td><?php echo $employment->employment_date?></td>
+                                <td><?php echo $_form->getLabel('email')?></td>
+                                <td><?php echo $user->email?></td>
                             </tr>
                             <tr>
-                                <td><?php echo $employmentForm->getLabel('employment_status')?></td>
-                                <td><?php echo $employment->employment_status?></td>
+                                <td><?php echo $_form->getLabel('phone_number')?></td>
+                                <td><?php echo $user->phone_number?></td>
                             </tr>
-                            <tr>
-                                <td><?php echo $employmentForm->getLabel('salary_per_month')?></td>
-                                <td><a href="#"><span data-content="<?php echo seal($employment->salary_per_month)?>">Double click to show</span></a></td>
-                            </tr>
+                            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
+                                <tr>
+                                    <td><?php echo $employmentForm->getLabel('employment_date')?></td>
+                                    <td><?php echo $employment->employment_date?></td>
+                                </tr>
+                                <tr>
+                                    <td><?php echo $employmentForm->getLabel('employment_status')?></td>
+                                    <td><?php echo $employment->employment_status?></td>
+                                </tr>
+                                <tr>
+                                    <td><?php echo $employmentForm->getLabel('salary_per_month')?></td>
+                                    <td><a href="#"><span data-content="<?php echo seal($employment->salary_per_month)?>">Double click to show</span></a></td>
+                                </tr>
+                            <?php endif?>
                         </table>
                     </div>
                 </div>
             </div>
-
+            <?php if($schedule || isManagement() || isEqual(whoIs('id'), $employment->reports_to) || isEqual(whoIs('id'), $user->id)) :?>
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <h4>Schedule</h4>
@@ -59,7 +75,9 @@
 
                 <div class="widget-content widget-content-area">
                     <?php if(!$schedule) :?>
-                        <?php echo wLinkDefault(_route('schedule:create', null, ['user_id' => $user->id]), 'Create Schedule')?>
+                        <?php if(isManagement() || isEqual(whoIs('id'), $employment->reports_to)) :?>
+                            <?php echo wLinkDefault(_route('schedule:create', null, ['user_id' => $user->id]), 'Create Schedule')?>
+                        <?php endif?>
                     <?php else:?>
                         <table class="table table-bordered">
                             <thead>
@@ -90,18 +108,11 @@
                     <?php endif?>
                 </div>
             </div>
+            <?php endif?>
         </div>
 
         <div class="col-md-8">
-            <div class="statbox widget box box-shadow mb-3">
-                <div class="widget-header">
-                    <h4>Performance Evaluation</h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    <h4>Underconstruction</h4>
-                </div>
-            </div>
-
+            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
             <div class="statbox widget box box-shadow mb-3">
                 <div class="widget-header">
                     <h4>Files</h4>
@@ -241,7 +252,9 @@
                     </section>
                 </div>
             </div>
+            <?php endif?>
             
+            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <h4>Government IDs <a href="<?php echo _route('govid:edit', $employment->user_id)?>"><i data-feather="edit"></i></a></h4>
@@ -258,15 +271,31 @@
                     </table>
                 </div>
             </div>
+            <?php endif?>
 
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <h4>Underlings</h4>
                 </div>
                 <div class="widget-content widget-content-area">
-                    <?php foreach($underlings as $key => $row) :?>
-                        <p><?php echo $row->first_name . ' ' .$row->last_name . "($row->manager_name)"?></p>
-                    <?php endforeach?>
+                    <!-- Images -->
+                    <ul class="list-group list-group-media">
+                        <?php foreach($underlings as $key => $row) :?>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="mr-3">
+                                        <img alt="avatar" src="<?php echo $row->profile?>" class="img-fluid rounded-circle" style="width:75px">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="tx-inverse"><?php echo $row->first_name . ' ' .$row->last_name?></h6>
+                                        <p class="mg-b-0"><?php echo $row->position_name?></p>
+
+                                        <?php echo wLinkDefault(_route('user:show', $row->user_id), 'Preview', ['icon' => 'eye'])?>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endforeach?>
+                    </ul>
                 </div>
             </div>
 

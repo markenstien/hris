@@ -24,7 +24,7 @@
 			$this->data['_formCommon'] = $this->_formCommon;
 			$this->data['_attachmentForm'] = $this->_attachmentForm;
 			$this->data['_global'] = [
-				'pageTitle' => 'test'
+				'pageTitle' => APP_NAME
 			];
 			$user = whoIs(); 
 			if($user && isEqual($user->user_type , 'admin'))

@@ -48,7 +48,7 @@
 			<h4>Contact</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('email')); ?></div>
+					
 					<div class="col-md-4"><?php __($form->getCol('phone_number')); ?></div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		<?php if(isEqual($user->user_type, 'employee')) :?>
+		<?php if(isEqual($user->user_type, 'employee') && isManagement()) :?>
 		<div class="widget-content widget-content-area">
 			<h4>Work Details</h4>
 			<div class="form-group">
@@ -84,7 +84,7 @@
 			<h4>Credentials</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('username'));?></div>
+					<div class="col-md-4"><?php __($form->getCol('email')); ?></div>
 					<div class="col-md-4"><?php __($form->getCol('password'));?></div>
 				</div>
 

@@ -9,7 +9,19 @@
             ?>
         </div>
         <div class="widget-content widget-content-area">
-            <?php echo $form->getForm('col')?>
+            <?php echo $form->start()?>
+                <?php echo $form->getFormItems('col')?>
+                <div class="form-group mt-5">
+                    <?php echo wLinkDefault(_route('leave:delete', $leave->id,[
+                        'route' => seal(_route('leave:index'))
+                    ]), 'Delete', [
+                        'icon' =>  'trash-circle',
+                        'class' => 'btn btn-danger btn-sm form-verify'
+                    ])?>
+                </div>
+            <?php echo $form->end()?>
+
+
         </div>
     </div>
 </div>

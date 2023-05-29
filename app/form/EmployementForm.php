@@ -106,10 +106,10 @@
         public function addDailySalary() {
             return $this->add([
                 'name' => 'salary_per_day',
-                'type' => 'text',
+                'type' => 'hidden',
                 'class' => 'form-control',
                 'options' => [
-                    'label' => 'Daily Pay Amount'
+                    // 'label' => 'Daily Pay Amount'
                 ],
                 'required' => true
             ]);

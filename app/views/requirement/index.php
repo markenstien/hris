@@ -1,7 +1,9 @@
 <?php build('page-control')?>
-<div class="widget widget-content-area page-command-container">
-    <?php echo wLinkDefault(_route('requirement:create'), '', ['icon' => 'plus-circle','class' => 'btn btn-secondary btn-sm'])?>
-</div>
+    <?php if(isManagement()) :?>
+        <div class="widget widget-content-area page-command-container">
+            <?php echo wLinkDefault(_route('requirement:create'), '', ['icon' => 'plus-circle','class' => 'btn btn-secondary btn-sm'])?>
+        </div>
+    <?php endif?>
 <?php endbuild()?>
 
 <?php build('content') ?>

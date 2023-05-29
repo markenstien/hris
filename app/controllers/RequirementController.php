@@ -29,7 +29,12 @@
         public function create() {
             if(isSubmitted()) {
                 $post = request()->posts();
-                $this->model->create($post);
+                $res = $this->model->create($post);
+
+                if($res) {
+                    Flash::set("Training Created");
+                    return redirect(_route('requirement:show', $this->model->_getRetval('id')));
+                }
             }
             $this->data['trainingForm'] = $this->trainingForm;
             $this->data['departments'] = $this->eeAttributeModel->getDepartments();
@@ -80,6 +85,7 @@
 
         public function approveRespond($respondentId) {
             $this->eeRequirementRespondent->approve($respondentId);
+            return redirect(_route('requirement:show', $this->eeRequirementRespondent->_getRetval('requirement_id')));
         }
 
         public function attachFile() {
@@ -91,6 +97,8 @@
                     'global_key' => 'requirement_item',
                     'global_id' => $id
                 ], 'files');
+
+                return redirect(_route('requirement:respondentView', $id));
             }
         }
     }
