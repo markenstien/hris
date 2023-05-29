@@ -203,34 +203,6 @@
 		}
     }
 
-    function order_status_html($status)
-    {
-        switch(strtolower($status))
-        {
-            case 'pending':
-
-            case 'delivered':
-                return <<<EOF
-                    <span class='badge badge-primary'> {$status} </span>
-                EOF;
-            break;
-
-            case 'finished':
-                return <<<EOF
-                    <span class='badge badge-success'> {$status} </span>
-                EOF;
-            break;
-
-            case 'cancelled':
-                return <<<EOF
-                    <span class='badge badge-danger'> {$status} </span>
-                EOF;
-            break;
-
-
-        }
-    }
-
     function api_call($method, $url, $data = false)
     {
         $curl = curl_init();

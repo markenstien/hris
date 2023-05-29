@@ -66,4 +66,20 @@
                 'parent_id' => $eeData['parent_id']
             ]);
         }
+
+        public function getDepartments($params = []) {
+            return $this->getAll([
+                'where' => [
+                    'ea.attr_key' => 'DEPARTMENT'
+                ]
+            ]);
+        }
+
+        public function getPositions($params = []) {
+            return $this->getAll([
+                'where' => [
+                    'ea.attr_key' => 'POSITION'
+                ]
+            ]);
+        }
     }

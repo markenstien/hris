@@ -2,7 +2,6 @@
 
     namespace Form;
     use Core\Form;
-use Model;
 use Module;
 
     load(['Form'], CORE);

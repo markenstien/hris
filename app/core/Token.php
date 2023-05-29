@@ -4,7 +4,7 @@
 	class Token 
 	{
 
-		public function createMix( $prefix = null )
+		public function createMix($prefix = null)
 		{
 			return strtoupper($prefix.random_number(3).'-'.random_letter(5));
 		}

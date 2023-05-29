@@ -44,6 +44,13 @@
         .widget-header{
             padding: 20px !important;
         }
+
+        .input-box {
+            border: 1px solid #eee;;
+            padding: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
     </style>
 
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
@@ -212,10 +219,10 @@
                     
 
                     <li class="menu">
-                        <a href="<?php echo _route('user:index')?>" class="dropdown-toggle">
+                        <a href="<?php echo _route('requirement:index')?>" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="users"></i>
-                                <span> Evaluations </span>
+                                <span> Training & Certificates </span>
                             </div>
                         </a>
                     </li>

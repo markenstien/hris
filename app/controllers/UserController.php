@@ -336,6 +336,7 @@
 			$this->data = array_merge($data, $this->data);
 
 			if(isEqual($user->user_type, 'employee')) {
+				$this->data['underlings'] = $this->employmentModel->getUnderlings($id);
 				return $this->view('user/show', $this->data);
 			} else {
 				return $this->view('user/show_staff_admin', $this->data);

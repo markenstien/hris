@@ -49,6 +49,14 @@
             return $this->db->resultSet();
         }
 
+        public function getUnderlings($userId) {
+            return $this->getAll([
+                'where' => [
+                    'ed.reports_to' => $userId
+                ]
+            ]);
+        }
+
         public function getSingle($params) {
             return $this->getAll($params)[0] ?? false;
         }

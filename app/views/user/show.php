@@ -258,6 +258,18 @@
                     </table>
                 </div>
             </div>
+
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Underlings</h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <?php foreach($underlings as $key => $row) :?>
+                        <p><?php echo $row->first_name . ' ' .$row->last_name . "($row->manager_name)"?></p>
+                    <?php endforeach?>
+                </div>
+            </div>
+
         </div>
     </div>
 <?php endbuild()?>

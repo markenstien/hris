@@ -130,6 +130,13 @@
 		'approve' => 'approve'
 	]);
 
+	_routeInstance('requirement', 'RequirementController', $routes, [
+		'attachFile' => 'attachFile',
+		'respondentView' => 'respondentView',
+		'approveRespond' => 'approveRespond'
+	]);
+	
+	_routeInstance('viewer', 'ViewerController', $routes);
 	
 	return $routes;
 ?>
