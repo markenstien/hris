@@ -60,7 +60,7 @@
                                 </tr>
                                 <tr>
                                     <td><?php echo $employmentForm->getLabel('salary_per_month')?></td>
-                                    <td><a href="#"><span data-content="<?php echo seal($employment->salary_per_month)?>">Double click to show</span></a></td>
+                                    <td><a href="javascript:void(0)" id="salaryLink"><span data-content="<?php echo $employment->salary_per_month?>">Double click to show</span></a></td>
                                 </tr>
                             <?php endif?>
                         </table>
@@ -79,32 +79,34 @@
                             <?php echo wLinkDefault(_route('schedule:create', null, ['user_id' => $user->id]), 'Create Schedule')?>
                         <?php endif?>
                     <?php else:?>
-                        <table class="table table-bordered">
-                            <thead>
-                                <th>Day</th>
-                                <th>In</th>
-                                <th>Out</th>
-                                <th>Rest Day</th>
-                            </thead>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>Day</th>
+                                    <th>In</th>
+                                    <th>Out</th>
+                                    <th>Rest Day</th>
+                                </thead>
 
-                            <tbody>
-                                <?php $schedTodayId = $scheduleToday->id?>
-                                <?php foreach($schedule as $key => $row) :?>
-                                    <tr <?php echo isEqual($schedTodayId , $row->id) ? "style='background:var(--success)'" : '' ?>>
-                                        <td><?php echo $row->day?></td>
-                                        <td><?php echo date_long($row->time_in , 'h:i:s A')?></td>
-                                        <td><?php echo date_long($row->time_out , 'h:i:s A')?></td>
-                                        <td>
-                                            <?php if($row->is_off) :?>
-                                                <span class="badge badge-danger"> RD </span>
-                                            <?php else:?>
-                                                <span class="badge badge-primary"> WD </span>
-                                            <?php endif?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach?>
-                            </tbody>
-                        </table>
+                                <tbody>
+                                    <?php $schedTodayId = $scheduleToday->id?>
+                                    <?php foreach($schedule as $key => $row) :?>
+                                        <tr <?php echo isEqual($schedTodayId , $row->id) ? "style='background:var(--success)'" : '' ?>>
+                                            <td><?php echo $row->day?></td>
+                                            <td><?php echo date_long($row->time_in , 'h:i:s A')?></td>
+                                            <td><?php echo date_long($row->time_out , 'h:i:s A')?></td>
+                                            <td>
+                                                <?php if($row->is_off) :?>
+                                                    <span class="badge badge-danger"> RD </span>
+                                                <?php else:?>
+                                                    <span class="badge badge-primary"> WD </span>
+                                                <?php endif?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach?>
+                                </tbody>
+                            </table>
+                        </div>
                     <?php endif?>
                 </div>
             </div>
@@ -299,6 +301,32 @@
                 </div>
             </div>
 
+            <?php if($certificates) :?>
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Certificates</h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Code</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                        </thead>
+                        <?php foreach($certificates as $key => $row) :?>
+                            <tr>
+                                <td><?php echo $row->req_code?></td>
+                                <td><?php echo wLinkDefault(_route('requirement:respondentView',$row->id, [
+                                    'respondent_id' => $row->id,
+                                    'cert_id' => $row->cert_id
+                                ]), $row->req_title)?></td>
+                                <td><span class="badge badge-primary"><?php echo $row->eerr_status?></span></td>
+                            </tr>
+                        <?php endforeach?>
+                        </table>
+                </div>
+            </div>
+            <?php endif?>
         </div>
     </div>
 <?php endbuild()?>
@@ -322,5 +350,16 @@
     </style>
 <?php endbuild()?>
 
+<?php build('scripts') ?>
+    <script>
+        $(document).ready(function(){
+            
+            $("#salaryLink").dblclick(function(e){
+                let span = $(this).find('span');
+                alert(span.data('content'));
+            });
+        });
+    </script>
+<?php endbuild()?>
 
 <?php loadTo()?>

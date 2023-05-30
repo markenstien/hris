@@ -9,7 +9,7 @@
 		private $_employmentForm;
 		
 		protected $employmentModel,$governmentIDModel,
-		$model,$scheduleModel;
+		$model,$scheduleModel, $eeRRModel;
 
 
 		public function __construct()
@@ -21,6 +21,7 @@
 			$this->employmentModel = model('EmploymentModel');
 			$this->governmentIDModel = model('GovernmentIDModel');
 			$this->scheduleModel = model('ScheduleModel');
+			$this->eeRRModel = model('EmployeeRequirementRespondentModel');
 			
 			$this->data['_form'] = $this->_form;
 		}
@@ -339,7 +340,12 @@
 			
 			$data['schedule'] = $this->scheduleModel->getByUser($id);
 			$data['scheduleToday'] = $this->scheduleModel->getToday($id);
-
+			$data['certificates'] = $this->eeRRModel->getAll([
+				'where' => [
+					'eerr.user_id' => $id
+				]
+			]);
+			
 			$this->data = array_merge($data, $this->data);
 
 			if(isEqual($user->user_type, 'employee')) {

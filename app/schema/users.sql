@@ -24,3 +24,34 @@ alter table users
 
 alter table users 
 	add column address_id int(10);
+
+
+
+insert into users(
+	user_code,
+	user_type,
+	first_name,
+	last_name,
+	email,
+	password
+) VALUES(
+	'ad_101',
+	'administrator',
+	'Super Admin',
+	'Administrator',
+	'admin@ntchris.online',
+	'1111'
+),
+(
+	'stf_101',
+	'staff',
+	'George',
+	'staff',
+	'staff@ntchris.online',
+	'1111'
+);
+
+
+username : admin@ntchris.online
+username : staff@ntchris.online
+pw: 1111

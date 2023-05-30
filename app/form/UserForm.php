@@ -56,7 +56,7 @@ use Module;
 
 				'attributes' => [
 					'id' => 'id_first_name',
-					'placeholder' => 'Enter Last Name'
+					'placeholder' => 'Enter First Name'
 				]
 			]);
 		}

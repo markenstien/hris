@@ -23,6 +23,7 @@
                     <th>Status</th>
                     <th>Category</th>
                     <th>Referene Date</th>
+                    <th>Reason</th>
                     <th>Approved By</th>
                     <th>Action</th>
                 </thead>
@@ -37,6 +38,7 @@
                             <td><?php echo $row->status?></td>
                             <td><?php echo $row->leave_category?></td>
                             <td><?php echo $row->date_filed?></td>
+                            <td><?php echo $row->reason?></td>
                             <td><?php echo $row->approver_full_name?></td>
                             <td>
 

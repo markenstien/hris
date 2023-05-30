@@ -77,7 +77,8 @@
         public function approve($id) {
             return parent::update([
                 'approval_date' => today(),
-                'approved_by' => whoIs('id')
+                'approved_by' => whoIs('id'),
+                'status' => 'approved'
             ], $id);
         }
 

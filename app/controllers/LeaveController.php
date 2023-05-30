@@ -91,6 +91,7 @@
 
         public function approve($id) {
             $this->model->approve($id);
+            Flash::set("Leave Approved");
             return redirect(_route('leave:index'));
         }
     }

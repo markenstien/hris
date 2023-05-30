@@ -54,6 +54,11 @@
             display: inline-block;
             cursor: pointer;
         }
+
+        .widget-content-area{
+            padding: 20px !important;
+        }
+
     </style>
 
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
