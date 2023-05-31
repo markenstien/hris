@@ -9,59 +9,10 @@
             <?php echo $trainingForm->start()?>
                 <?php echo $trainingForm->getFormItems()?>
 
-            <div class="form-group">
-                <div class='row mb-2'>
-                    <div class='col-md-3'>
-                        Departments
-                        <div>
-                            <label for="department_select_all">
-                                <input type="checkbox" id="department_select_all" name="department_select_all">
-                                Select All
-                            </label>
-                        </div>
-                    </div>
-                    <div class='col-md-9'>
-                        <?php foreach($departments as $key => $row) :?>
-                            <label for="department<?php echo $row->id?>" class="input-box">
-                                <?php echo $row->attr_name . "({$row->attr_abbr_name})"?>
-                                <input type="checkbox" 
-                                id="department<?php echo $row->id?>" 
-                                name="departments[]" 
-                                class="department"
-                                value="<?php echo $row->id?>">
-                            </label>
-                        <?php endforeach?>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <div class='row mb-2'>
-                    <div class='col-md-3'>
-                        Positions
-                        <div>
-                            <label for="position_select_all">
-                                <input type="checkbox" id="position_select_all" name="position_select_all">
-                                Select All
-                            </label>
-                        </div>
-                    </div>
-                    <div class='col-md-9'>
-                        <?php foreach($positions as $key => $row) :?>
-                            <label for="position<?php echo $row->id?>" class="input-box">
-                                <?php echo $row->attr_name . "({$row->attr_abbr_name})"?>
-                                <input type="checkbox" 
-                                id="position<?php echo $row->id?>" 
-                                name="positions[]" 
-                                class="position"
-                                value="<?php echo $row->id?>">
-                            </label>
-                        <?php endforeach?>
-                    </div>
-                </div>
-            </div>
-
+                <?php
+                    Form::hidden('department_select_all', 'on');
+                    Form::hidden('position_select_all', 'on');
+                ?>
             <div class="form-group">
                 <?php Form::submit('', 'Create Training')?>
             </div>

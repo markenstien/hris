@@ -70,6 +70,8 @@
 
             if(!empty($params['order'])) {
                 $order = " ORDER BY {$params['order']} ";
+            } else {
+                $order = " ORDER BY id desc";
             }
 
             if(!empty($params['limit'])) {

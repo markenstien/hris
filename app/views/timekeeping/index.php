@@ -1,11 +1,17 @@
 <?php build('page-control')?>
-	<div class="widget widget-content-area page-command-container">
-		<a href="<?php echo _route('tk:create', null, [
-            'user_id' => seal(whoIs('id')),
-            'type' => 'manual_form'
-        ])?>"  title="File Ac"
-			class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
-	</div>
+    <div class="widget widget-content-area page-command-container">
+        <?php if(authType([USER_HR,USER_EMP])) :?>
+            <a href="<?php echo _route('tk:create', null, [
+                'user_id' => seal(whoIs('id')),
+                'type' => 'manual_form'
+            ])?>"  title="File Ac"
+                class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
+        <?php endif?>
+
+        <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm">
+            <i data-feather="filter"></i>
+        </button>        
+    </div>
 <?php endbuild()?>
 
 
@@ -17,61 +23,53 @@
 
         <div class="widget-content widget-content-area">
             <?php Flash::show()?>
-            <div class="table-responsive">
-                <table class="table table-bordered dataTable">
-                    <thead>
-                        <th>#</th>
-                        <th>User</th>
-                        <th>Position</th>
-                        <th>Time In</th>
-                        <th>Time Out</th>
-                        <th>Type</th>
-                        <th>Duration</th>
-                        <th>Status</th>
-                        <th>Remarks</th>
-                        <th>Action</th>
-                    </thead>
+            <?php grab($fullViewPath, [
+                'timesheets' => $timesheets,
+                'usersTimesheets' => $usersTimesheets ?? ''
+            ])?>
+        </div>
+    </div>
 
-                    <tbody>
-                        <?php foreach($timesheets as $key => $row) :?>
-                            <tr>
-                                <td><?php echo ++$key?></td>
-                                <td><?php echo $row->full_name?></td>
-                                <td><?php echo $row->position_abbr_name?></td>
-                                <td><?php echo $row->time_in?></td>
-                                <td><?php echo $row->time_out?></td>
-                                <td><?php echo $row->sheet_category?></td>
-                                <td><?php echo timeInMinutesToHours(timeDifferenceInMinutes($row->time_in, $row->time_out), true)?></td>
-                                <td><?php echo $row->status?></td>
-                                <td><?php echo $row->remarks?></td>
-                                <td>
-                                    
-                                    <?php
-                                        if(isEqual($row->status,'pending')) {
-                                            echo wLinkDefault(_route('tk:edit', $row->id), 'Edit', [
-                                                'icon' => 'edit'
-                                            ]);
-                                            
-
-                                            if(isEqual(whoIs('user_type'),'staff') || isEqual($row->reports_to, whoIs('id'))) {
-                                                echo wLinkDefault(_route('tk:approve', $row->id), 'Approve', [
-                                                    'icon' => 'check-circle'
-                                                ]);
-                                            }
-                                        } else {
-                                            if(isEqual(whoIs('user_type'),'staff') || isEqual($row->reports_to, whoIs('id'))) {
-                                                echo wLinkDefault(_route('tk:delete', $row->id), 'Delete', [
-                                                    'icon' => 'trash',
-                                                    'class' => 'btn btn-danger btn-sm'
-                                                ]);
-                                            }
-                                        }
-                                    ?>
-                                </td>
-                            </tr>
-                        <?php endforeach?>
-                    </tbody>
-                </table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php Form::open(['method' => 'get'])?>
+                        <?php echo $_formCommon->getCol('start_date');  ?>
+                        <?php echo $_formCommon->getCol('end_date');  ?>
+                        <div class="mt-2 form-grou">
+                            <?php
+                                Form::label('User');
+                                Form::select('user_id', $userArray, '', [
+                                    'class' => 'form-control'
+                                ]);
+                            ?>
+                        </div>
+                        
+                        <div class="mt-2">
+                            <?php
+                                Form::label('View Type');
+                                Form::select('view_type', Module::get('timesheet')['view_type'], 'free_list', [
+                                    'class' => 'form-control'
+                                ]);
+                            ?>
+                        </div>
+                        
+                        <div class="mt-2">
+                            <?php Form::submit('btn_filter', 'Apply Filter')?>
+                        </div>
+                    <?php Form::close()?>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,48 +1,93 @@
 <?php
 
     use Form\TimesheetForm;
+    use Services\TimesheetService;
+
     load(['TimesheetForm'],FORMS);
+    load(['TimesheetService'],SERVICES);
+
 
     class TimekeepingController extends Controller
     {
 
         const DEFAULT_CREATE_VIEW = 'web_manual';
-        public $model,$employmentModel;
-
-        public $timesheetForm;
+        public $model,$employmentModel,$eeAttributeModel,$userModel;
+        public $timesheetForm, $serviceTimesheet;
 
         public function __construct()
         {
             parent::__construct();
             $this->model = model('TimesheetModel');
             $this->employmentModel = model('EmploymentModel');
+            $this->eeAttributeModel = model('EmploymentAttributeModel');
+            $this->userModel = model('UserModel');
+            
             $this->timesheetForm = new TimesheetForm();
+            $this->serviceTimesheet = new TimesheetService();
         }
         /**
          * list of timesheets
          */
-        public function index() {
+        public function index() 
+        {
+            $req = request()->inputs();
 
-            if(isEqual($this->data['whoIs']->user_type, 'employee')) {
-                $underlings = $this->employmentModel->getUnderlings($this->data['whoIs']->id);
-                $underlingsIds = getListObject($underlings, 'user_id');
-                $underlingsIds[] = $this->data['whoIs']->id;
+            $users = $this->userModel->getAll([
+                'where' => ['user_type' => USER_EMP]
+            ]);
 
+            $departments = $this->eeAttributeModel->getDepartments();
+            
+            $this->data['departmentArray'] = arr_layout_keypair($departments, ['id', 'attr_name@attr_abbr_name']);
+            $this->data['userArray'] = arr_layout_keypair($users, ['user_id', 'first_name@last_name']);
+
+            // $timesheets =  $this->model->getAll();
+            // $this->data['timesheets'] = $timesheets;
+
+            if(!empty($req['btn_filter'])) {
+
+                $condition = [
+                    'date(time_in)' => [
+                        'condition' => 'between',
+                        'value' => [$req['start_date'], $req['end_date']]
+                    ]
+                ];
+
+
+                if(authType(USER_EMP)) {
+                    $condition['tklog.user_id'] = whoIs('id');
+                }
+
+                if(!empty($req['user_id'])) {
+                    $condition['tklog.user_id'] = $req['user_id'];
+                }
 
                 $this->data['timesheets'] = $this->model->getAll([
-                    'where' => [
-                        'tklog.user_id' => [
-                            'condition' => 'in',
-                            'value' => $underlingsIds
-                        ]
-                    ],
+                    'where' => $condition,
                     'order' => 'tklog.id desc'
+                ]);
+
+                $this->data['usersTimesheets'] = $this->serviceTimesheet->formatPerUserTemplate($this->data['timesheets'], [
+                    'start_date' => $req['start_date'],
+                    'end_date' => $req['end_date']
                 ]);
             } else {
-                $this->data['timesheets'] = $this->model->getAll([
-                    'order' => 'tklog.id desc'
-                ]);
+                if(authType(USER_EMP)) {
+                    $this->data['timesheets'] = $this->model->getAll([
+                        'where' => [
+                            'tklog.user_id' => $this->data['whoIs']->id
+                        ],
+                        'order' => 'tklog.id desc'
+                    ]);
+                } else {
+                    $this->data['timesheets'] = $this->model->getAll([
+                        'order' => 'tklog.id desc'
+                    ]);
+                }
             }
+            
+
+            $this->data['fullViewPath'] = empty($req['view_type']) ? 'timekeeping/views/view_type_free_list' : 'timekeeping/views/view_type_'.$req['view_type'];
             return $this->view('timekeeping/index', $this->data);
         }
         /**

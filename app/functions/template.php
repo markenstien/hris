@@ -62,9 +62,7 @@
     {
         $viewPath = convertDotToDS($viewPath);
 
-
-
-        if(isset($_GLOBALS['data']))
+        if(!is_null($data))
         {
             $globalData = $GLOBALS['data'];
             extract($globalData);

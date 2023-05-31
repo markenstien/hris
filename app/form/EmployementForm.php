@@ -128,7 +128,12 @@
         }
 
         public function addManager() {
-            $users = $this->userModel->getAll(['order' => 'user.first_name asc']);
+            $users = $this->userModel->getAll([
+                'where' => [
+                    'user.user_type' => USER_EMP
+                ],
+                'order' => 'user.first_name asc'
+            ]);
             $managers = arr_layout_keypair($users, ['id', 'first_name@last_name@position_name']);
 
             return $this->add([

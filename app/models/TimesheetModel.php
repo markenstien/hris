@@ -399,7 +399,7 @@
 		public function getAll($params = []) {
 			$where = null;
 
-			if(isset($params['where'])) {
+			if(!empty($params['where'])) {
 				$where = " WHERE ".parent::conditionConvert($params['where']);
 			}
 
@@ -408,6 +408,9 @@
 					concat(user.first_name , ' ',user.last_name) as full_name,
 					ea.attr_name as position_name,
 					ea.attr_abbr_name as position_abbr_name,
+
+					dept.attr_name as department_name,
+					dept.attr_abbr_name as department_abbr_name,
 					ed.reports_to as reports_to
 
 					FROM {$this->table} as tklog
@@ -419,9 +422,12 @@
 					
 					LEFT JOIN employment_attributes as ea
 					on ea.id = ed.position_id
+
+					LEFT JOIN employment_attributes as dept 
+					on dept.id = ed.department_id
 					{$where}"
 			);
-
+			
 			return $this->db->resultSet();
 		}
 

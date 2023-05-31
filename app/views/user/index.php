@@ -1,9 +1,10 @@
 <?php build('page-control')?>
 <div class="widget widget-content-area page-command-container">
-	<a href="<?php echo _route('user:create', null, [
-		'user_type' => $userType
-	])?>" 
-		class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>
+	<?php if(isHr()) :?>
+		<a href="<?php echo _route('user:create', null, [
+			'user_type' => $userType
+		])?>"  class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>
+	<?php endif?>
 </div>
 <?php endbuild()?>
 
@@ -12,10 +13,12 @@
 		<?php Flash::show()?>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered dataTable">
+				<table class="table table-bordered <?php echo isAdmin() ? 'dataTableAction': 'dataTable'?>">
 					<thead>
 						<th>#</th>
-						<th>Ref</th>
+						<?php if(isEqual($userType, 'Employee')) :?>
+						<th>Employee ID</th>
+						<?php endif?>
 						<th>Name</th>
 						<th>Email</th>
 						<th>Type</th>
@@ -26,7 +29,9 @@
 						<?php foreach($users as $key => $row) :?>
 							<tr>
 								<td><?php echo ++$key?></td>
+								<?php if(isEqual($userType, 'Employee')) :?>
 								<td><?php echo $row->user_code?></td>
+								<?php endif?>
 								<td><?php echo $row->first_name . ' ' .$row->last_name?></td>
 								<td><?php echo $row->email?></td>
 								<td><?php echo $row->user_type?></td>

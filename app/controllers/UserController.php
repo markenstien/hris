@@ -9,7 +9,7 @@
 		private $_employmentForm;
 		
 		protected $employmentModel,$governmentIDModel,
-		$model,$scheduleModel, $eeRRModel;
+		$model,$scheduleModel, $eeRRModel,$leavePointModel;
 
 
 		public function __construct()
@@ -22,6 +22,7 @@
 			$this->governmentIDModel = model('GovernmentIDModel');
 			$this->scheduleModel = model('ScheduleModel');
 			$this->eeRRModel = model('EmployeeRequirementRespondentModel');
+			$this->leavePointModel = model('LeavePointModel');
 			
 			$this->data['_form'] = $this->_form;
 		}
@@ -349,6 +350,17 @@
 			$this->data = array_merge($data, $this->data);
 
 			if(isEqual($user->user_type, 'employee')) {
+				$leavePoint = $this->leavePointModel->getTotalByUser($id);
+				$leavePointArray = [];
+
+				foreach($leavePoint as $lpKey => $lpRow) {
+					$leavePointArray[$lpRow->leave_point_category] = $lpRow->total_point;
+				}
+				$this->data['leavePoint'] = $leavePoint;
+				$this->data['leavePointArray'] = $leavePointArray;
+
+				//temporary
+
 				$this->data['underlings'] = $this->employmentModel->getUnderlings($id);
 				return $this->view('user/show', $this->data);
 			} else {

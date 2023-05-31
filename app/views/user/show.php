@@ -114,6 +114,104 @@
         </div>
 
         <div class="col-md-8">
+            
+            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Government IDs <?php if(authType(USER_HR)) {
+                        ?> <a href="<?php echo _route('govid:edit', $employment->user_id)?>"><i data-feather="edit"></i></a> <?php
+                    }?></h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <table class="table table-bordered">
+                        <?php foreach($governmentIDs as $key => $row) :?>
+                            <tr>
+                                <td><?php echo $row->organization?></td>
+                                <td><?php echo $row->id_number?></td>
+                                <td><?php echo $row->is_verified ? '<span class="badge badge-primary">Verified</span>': '<span class="badge badge-warning">Unverified</span>'?></td>
+                            </tr>
+                        <?php endforeach?>
+                    </table>
+                </div>
+            </div>
+            <?php endif?>
+
+            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Leave Points <?php if(authType(USER_HR)) {
+                        ?> <a href="<?php echo _route('leave-point:create', $employment->user_id)?>"><i data-feather="edit"></i></a> <?php
+                    }?></h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <?php foreach(Module::get('ee_leave')['categories'] as $key => $leaveCat) :?>
+                                <tr>
+                                    <td><?php echo $leaveCat?></td>
+                                    <td><?php echo $leavePointArray[$leaveCat] ?? '0'?></td>
+                                </tr>
+                            <?php endforeach?>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <?php endif?>
+
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Underlings</h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <!-- Images -->
+                    <ul class="list-group list-group-media">
+                        <?php foreach($underlings as $key => $row) :?>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="mr-3">
+                                        <img alt="avatar" src="<?php echo $row->profile?>" class="img-fluid rounded-circle" style="width:75px">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="tx-inverse"><?php echo $row->first_name . ' ' .$row->last_name?></h6>
+                                        <p class="mg-b-0"><?php echo $row->position_name?></p>
+
+                                        <?php echo wLinkDefault(_route('user:show', $row->user_id), 'Preview', ['icon' => 'eye'])?>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endforeach?>
+                    </ul>
+                </div>
+            </div>
+
+            <?php if($certificates) :?>
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <h4>Certificates</h4>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Code</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                        </thead>
+                        <?php foreach($certificates as $key => $row) :?>
+                            <tr>
+                                <td><?php echo $row->req_code?></td>
+                                <td><?php echo wLinkDefault(_route('requirement:respondentView',$row->id, [
+                                    'respondent_id' => $row->id,
+                                    'cert_id' => $row->cert_id
+                                ]), $row->req_title)?></td>
+                                <td><span class="badge badge-primary"><?php echo $row->eerr_status?></span></td>
+                            </tr>
+                        <?php endforeach?>
+                        </table>
+                </div>
+            </div>
+            <?php endif?>
+
             <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
             <div class="statbox widget box box-shadow mb-3">
                 <div class="widget-header">
@@ -252,78 +350,6 @@
 
                         <?php endif?>
                     </section>
-                </div>
-            </div>
-            <?php endif?>
-            
-            <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
-            <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <h4>Government IDs <a href="<?php echo _route('govid:edit', $employment->user_id)?>"><i data-feather="edit"></i></a></h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    <table class="table table-bordered">
-                        <?php foreach($governmentIDs as $key => $row) :?>
-                            <tr>
-                                <td><?php echo $row->organization?></td>
-                                <td><?php echo $row->id_number?></td>
-                                <td><?php echo $row->is_verified ? '<span class="badge badge-primary">Verified</span>': '<span class="badge badge-warning">Unverified</span>'?></td>
-                            </tr>
-                        <?php endforeach?>
-                    </table>
-                </div>
-            </div>
-            <?php endif?>
-
-            <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <h4>Underlings</h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    <!-- Images -->
-                    <ul class="list-group list-group-media">
-                        <?php foreach($underlings as $key => $row) :?>
-                            <li class="list-group-item list-group-item-action">
-                                <div class="media">
-                                    <div class="mr-3">
-                                        <img alt="avatar" src="<?php echo $row->profile?>" class="img-fluid rounded-circle" style="width:75px">
-                                    </div>
-                                    <div class="media-body">
-                                        <h6 class="tx-inverse"><?php echo $row->first_name . ' ' .$row->last_name?></h6>
-                                        <p class="mg-b-0"><?php echo $row->position_name?></p>
-
-                                        <?php echo wLinkDefault(_route('user:show', $row->user_id), 'Preview', ['icon' => 'eye'])?>
-                                    </div>
-                                </div>
-                            </li>
-                        <?php endforeach?>
-                    </ul>
-                </div>
-            </div>
-
-            <?php if($certificates) :?>
-            <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <h4>Certificates</h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    <table class="table table-bordered">
-                        <thead>
-                            <th>Code</th>
-                            <th>Title</th>
-                            <th>Status</th>
-                        </thead>
-                        <?php foreach($certificates as $key => $row) :?>
-                            <tr>
-                                <td><?php echo $row->req_code?></td>
-                                <td><?php echo wLinkDefault(_route('requirement:respondentView',$row->id, [
-                                    'respondent_id' => $row->id,
-                                    'cert_id' => $row->cert_id
-                                ]), $row->req_title)?></td>
-                                <td><span class="badge badge-primary"><?php echo $row->eerr_status?></span></td>
-                            </tr>
-                        <?php endforeach?>
-                        </table>
                 </div>
             </div>
             <?php endif?>

@@ -132,6 +132,7 @@
 	]);
 	
 	_routeInstance('viewer', 'ViewerController', $routes);
+	_routeInstance('leave-point', 'LeavePointController', $routes);
 	
 	return $routes;
 ?>

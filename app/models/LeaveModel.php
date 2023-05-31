@@ -3,6 +3,8 @@
     class LeaveModel extends Model
     {
         public $table = 'employment_leaves';
+        private $leavePointModel;
+
         public $_fillables = [
             'user_id',
             'date_filed',
@@ -13,6 +15,14 @@
             'reason',
             'remarks'
         ];
+
+        public function __construct()
+        {
+            parent::__construct();
+            if(!isset($this->leavePointModel)) {
+                $this->leavePointModel = model('LeavePointModel');
+            }
+        }
 
         public function add($leaveData) {
             $_fillables = parent::getFillablesOnly($leaveData);
@@ -104,7 +114,7 @@
             $dateDifference = date_difference($startDate, $endDate);
             $dateDifferenceNumber = str_to_number_only($dateDifference);
 
-            if($dateDifferenceNumber > 1) {
+            if($dateDifferenceNumber >= 1) {
                 return true;
             }else{
                 return false;
@@ -143,6 +153,29 @@
 
         private function _addEntry($leaveData) {
             $_fillables = parent::getFillablesOnly($leaveData);
+
+            if(!$this->_verifyLeavePoint($leaveData['user_id'], $leaveData['leave_category'])){
+                $this->addError("Not enough leave points for {$leaveData['leave_category']}.");
+                return false;
+            }
+
+            //deduct uf sucess
+            $this->_deductLeavePoint($leaveData['user_id'], $leaveData['leave_category']);
+            
             return parent::store($_fillables);
+        }
+
+        private function _verifyLeavePoint($userId, $leaveType) {
+            $totalPoint = $this->leavePointModel->getTotalByUserSingle($userId, $leaveType)->total_point ?? 0;
+            return $totalPoint > 0 ;
+        }
+        
+        private function _deductLeavePoint($userId,$leaveType) {
+            $this->leavePointModel->store([
+                'user_id' => $userId,
+                'leave_point_category' => $leaveType,
+                'point' => -1,
+                'remarks' => 'Leave Request : '.$leaveType
+            ]);
         }
     }

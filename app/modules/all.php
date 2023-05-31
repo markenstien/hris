@@ -24,19 +24,32 @@
     ];
 
     $module['timesheet'] = [
-    'sheet_categories' => [
+        'sheet_categories' => [
             'REGULAR',
             'OT'
+        ],
+        'view_type' => [
+            'per_user',
+            'free_list'
         ]
     ];
 
     $module['ee_leave'] = [
         'categories' => [
-            'Vacation leave',
-            'Parental leave',
-            'Sick leave',
-            'Unpaid leave'
+            'Service Incentive Leave',
+            'Sick Leave',
+            'Vacation Leave',
+            'Maternity Leave',
+            'Paternity Leave',
+            'Special Leave'
+        ],
+        'status' => [
+            'pending',
+            'approved',
+            'declined',
+            'cancelled'
         ]
     ];
+
     
     return $module;

@@ -10,8 +10,18 @@
         </div>
         <div class="widget-content widget-content-area">
             <?php echo $form->start()?>
-                <?php echo $form->getFormItems('col')?>
-                <div class="form-group mt-5">
+                <?php 
+                    echo $form->getCol('id');
+                ?>
+                <?php echo $form->getCol('leave_category')?>
+                <?php echo $form->getCol('date_filed')?>
+                <?php echo $form->getCol('start_date')?>
+                <?php echo $form->getCol('end_date')?>
+
+                
+                <div class="mt-2">
+                    <?php Form::submit('', 'Save Leave Request')?>
+
                     <?php echo wLinkDefault(_route('leave:delete', $leave->id,[
                         'route' => seal(_route('leave:index'))
                     ]), 'Delete', [
@@ -19,9 +29,8 @@
                         'class' => 'btn btn-danger btn-sm form-verify'
                     ])?>
                 </div>
+
             <?php echo $form->end()?>
-
-
         </div>
     </div>
 </div>

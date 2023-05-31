@@ -50,4 +50,14 @@
     define('KEY_WORDS' , 'NTC HRIS');
     define('DESCRIPTION' , 'NTC HRIS');
     define('AUTHOR' , 'thesiscapstonemaker');
+
+
+    /**
+     * temporary
+     */
+
+    define('USER_HR', 'Staff');
+    define('USER_ADMIN', 'Administrator');
+    define('USER_SUB_ADMIN', 'Sub-Administrator');
+    define('USER_EMP', 'Employee');
 ?>

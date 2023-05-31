@@ -7,7 +7,7 @@
     class LeaveController extends Controller
     {
         public $form;
-        public $model,$userModel,$employmentModel;
+        public $model,$userModel,$employmentModel,$leavePointModel;
 
         public function __construct()
         {
@@ -16,29 +16,58 @@
             $this->model = model('LeaveModel');
             $this->userModel = model('UserModel');
             $this->employmentModel = model('EmploymentModel');
+            $this->leavePointModel = model('LeavePointModel');
 
             $this->data['form'] = $this->form;
             
         }
 
         public function index() {
-            if(!isManagement()) {
-                $underlings = $this->employmentModel->getUnderlings($this->data['whoIs']->id);
-                $underlingsIds = getListObject($underlings, 'user_id');
-                $underlingsIds[] = $this->data['whoIs']->id;
+
+            $req = request()->inputs();
+
+            if(!empty($req['filter'])) {
+                $validFilters = [
+                    'user_id',
+                    'leave_category',
+                    'status'
+                ];
+
+                $condition = [];
+
+                foreach($req as $reqKey => $reqRow) {
+                    if(isEqual($reqKey, $validFilters) && $reqRow != '') {
+                        $condition["el.{$reqKey}"] = $reqRow;
+                    }
+                    
+                }
 
                 $leaves = $this->model->getAll([
-                    'where' => [
-                        'el.user_id' => [
-                            'condition' => 'in',
-                            'value' => $underlingsIds
-                        ],
-                    ]
+                    'where' => $condition
                 ]);
             } else {
-                $leaves = $this->model->getAll();
+                //initial laoad
+                if(!isManagement()) {
+                    $leaves = $this->model->getAll([
+                        'where' => [
+                            'el.user_id' => whoIs('id')
+                        ]
+                    ]);
+                } else {
+                    $leaves = $this->model->getAll([
+                        'limit' => '20'
+                    ]);
+                }
             }
 
+            if(authType(USER_EMP)) {
+                $this->form->add([
+                    'name' => 'user_id',
+                    'type' => 'hidden',
+                    'value' => whoIs('id')
+                ]);
+            }
+            
             $this->data['leaves'] = $leaves;
             $this->data['user'] = $this->userModel->get($this->data['whoIs']->id);
             return $this->view('leave/index', $this->data);
@@ -55,10 +84,12 @@
                     Flash::set($this->model->getErrorString(), 'danger');
                     return request()->return();
                 } else {
-                    Flash::set($this->model->getMessageString());
+                    Flash::set("Leave Request filed");
                     return redirect(_route('leave:index'));
                 }
             }
+
+            $this->data['leavePoint'] = $this->leavePointModel->getTotalByUser($this->data['whoIs']->id);
             //iniot user
 
             $this->data['form']->add([

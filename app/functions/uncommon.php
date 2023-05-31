@@ -84,7 +84,24 @@
     function isAdmin($user = null) {
         $user = is_null($user) ? whoIs() : $user;
 
-        if(isEqual($user->user_type, ['Administrator', 'Sub-Administrator'])) {
+        if(isEqual($user->user_type, [USER_ADMIN, USER_SUB_ADMIN])) {
+            return true;
+        }
+        return false;
+    }
+
+    function isHr($user = null ) {
+        $user = is_null($user) ? whoIs() : $user;
+
+        if(isEqual($user->user_type, USER_HR)) {
+            return true;
+        }
+        return false;
+    }
+
+    function authType($type, $user = null) {
+        $user = is_null($user) ? whoIs() : $user;
+        if(isEqual($user->user_type, $type)) {
             return true;
         }
         return false;
