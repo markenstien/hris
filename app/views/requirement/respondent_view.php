@@ -15,11 +15,11 @@
                         </tr>
                         <tr>
                             <td>Training Title</td>
-                            <td><?php echo wLinkDefault(_route('requirement:show', $training->id), $training->req_title, ['icon' => 'eye'])?></td>
+                            <td><?php echo wLinkDefault(_route('requirement:show', $training->id), $training->req_title)?></td>
                         </tr>
                         <tr>
                             <td>Respondent</td>
-                            <td><?php echo $respondent->full_name?></td>
+                            <td><?php echo wLinkDefault(_route('user:show', $respondent->user_id), $respondent->full_name)?></td>
                         </tr>
                         <tr>
                             <td>Description</td>
@@ -48,6 +48,13 @@
                         echo wLinkDefault(_route('requirement:approveRespond', $respondent->id), 'Approve', [
                             'icon' => 'check-circle',
                             'class' => 'btn btn-primary btn-sm mt-4'
+                        ]);
+                    }
+
+                    if(isManagement() || isEqual(whoIs('id'), $respondent->user_id)) {
+                        echo wLinkDefault(_route('requirement:deleteResponse', $respondent->id), 'Delete Request', [
+                            'icon' => 'trash',
+                            'class' => 'btn btn-danger btn-sm mt-4'
                         ]);
                     }
                 ?>

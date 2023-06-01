@@ -10,6 +10,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area">
                     <h4>Training/Seminar</h4>
+                    <?php Flash::show()?>
                     <div class="text-center">
                         <a href="#" class="btn btn-primary btn-sm mb-3" 
                         data-toggle="modal" 
@@ -85,15 +86,12 @@
                         <li class="list-group-item list-group-item-action">
                             <div class="media">
                                 <div class="mr-3">
-                                    <img alt="avatar" src="<?php echo _path_tmp('assets/img/90x90.jpg')?>" class="img-fluid rounded-circle">
+                                    <img alt="avatar" src="<?php echo $row->profile ?? _path_tmp('assets/img/90x90.jpg')?>" class="img-fluid rounded-circle" style="width:50px">
                                 </div>
                                 <div class="media-body">
                                     <h6 class="tx-inverse"><?php echo $row->full_name?></h6>
                                     <p class="mg-b-0"><?php echo $row->position_name?></p>
-                                    <?php echo wLinkDefault(_route('requirement:respondentView', null, [
-                                        'cert_id' => $training->id,
-                                        'respondent_id' => $row->id
-                                    ]), 'Show Respondent', ['icon' => 'eye'])?>
+                                    <?php echo wLinkDefault(_route('requirement:respondentView', $row->id), 'Show Respondent', ['icon' => 'eye'])?>
                                 </div>
                             </div>
                         </li>

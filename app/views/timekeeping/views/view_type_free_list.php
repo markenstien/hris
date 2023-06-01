@@ -34,7 +34,6 @@
                                 // echo wLinkDefault(_route('tk:edit', $row->id), 'Edit', [
                                 //     'icon' => 'edit'
                                 // ]);
-                                
 
                                 if(isManagement()) {
                                     echo wLinkDefault(_route('tk:approve', $row->id), 'Approve', [
@@ -44,8 +43,7 @@
                             } else {
                                 if(isManagement()) {
                                     echo wLinkDefault(_route('tk:delete', $row->id), 'Delete', [
-                                        'icon' => 'trash',
-                                        'class' => 'btn btn-danger btn-sm'
+                                        'icon' => 'trash'
                                     ]);
                                 }
                             }

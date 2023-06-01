@@ -256,7 +256,8 @@
 			}
 			
 			$this->db->query(
-				"SELECT user.*,ed.*, user.id as id,
+				"SELECT user.*, concat(user.first_name , ' ' ,user.last_name) as full_name, 
+					ed.*, user.id as id,
 					position.attr_name as position_name,
 					position.attr_abbr_name as position_abbr,
 					department.attr_name as department_name,

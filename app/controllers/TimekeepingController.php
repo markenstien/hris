@@ -205,4 +205,19 @@
             Flash::set("Timesheet approved");
             return redirect(_route('tk:index'));
         }
+
+        public function log() {
+            $req = request()->inputs();
+
+            if(!empty($req['user_id']) && !empty($req['password'])) {
+                $user = $this->userModel->get($req['user_id']);
+                if(isEqual($user->password, $req['password'])) {
+                    $this->model->log($req['user_id']);
+                    Flash::set("{$this->model->getAction()} success");
+                    return request()->return();
+                }
+            }
+            Flash::set("Unable to process request",'danger');
+            return request()->return();
+        }
     }

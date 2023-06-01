@@ -20,10 +20,10 @@
             $_fillables['eerr_reference'] = $this->token->createMix();
             $_fillables['eerr_status'] = 'pending';
             $_fillables['date_of_entry'] = now();
-
             $id = parent::store($_fillables);
 
             $this->_addRetval('id', $id);
+
             return $id;
         }
 
@@ -48,6 +48,7 @@
                 "SELECT eerr.*, er.*, eerr.id as id ,
                     concat(user.first_name , ' ',user.last_name) as full_name,
                     concat(approver.first_name , ' ',approver.last_name) as approver_name,
+                    user.profile as profile,
                     
                     position.attr_name as position_name,
                     position.attr_abbr_name as position_abbr_name

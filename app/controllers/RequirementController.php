@@ -66,11 +66,12 @@
             return $this->view('requirement/show_traning', $this->data);
         }
 
-        public function respondentView() {
+        public function respondentView($respondentId) {
             $req = request()->inputs();
 
-            $respondent = $this->eeRequirementRespondent->get($req['respondent_id']);
-            $training = $this->model->get($req['cert_id']);
+            $respondent = $this->eeRequirementRespondent->get($respondentId);
+
+            $training = $this->model->get($respondent->cert_id);
 
             $this->data['respondent'] = $respondent;
             $this->data['training'] = $training;
@@ -91,8 +92,9 @@
         public function attachFile() {
             if(isSubmitted()) {
                 $post = request()->posts();
+
                 $id = $this->eeRequirementRespondent->create($post);
-                
+
                 $this->_attachmentModel->upload_multiple([
                     'global_key' => 'requirement_item',
                     'global_id' => $id
@@ -100,5 +102,13 @@
 
                 return redirect(_route('requirement:respondentView', $id));
             }
+        }
+
+        public function deleteResponse($id) {
+           $trainingResponse = $this->eeRequirementRespondent->get($id);
+           $this->eeRequirementRespondent->delete($id);
+           Flash::set("Response removed");
+
+           return redirect(_route('requirement:show', $trainingResponse->cert_id));
         }
     }

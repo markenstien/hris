@@ -18,8 +18,8 @@
 		];
 
 		private static $WORK_HOURS_TOTAL_TODAY = 'WORK_HOURS_TOTAL_TODAY';
-		public static $CLOCKED_IN = 'logged in';
-		public static $CLOCKED_OUT = 'logged out';
+		public static $CLOCKED_IN = 'TIME IN';
+		public static $CLOCKED_OUT = 'TIME OUT';
 
 		//fill n runtime
 		private $action , $user , $workData;
@@ -434,6 +434,7 @@
 			
 			return $this->db->resultSet();
 		}
+		
 
 		public function get($id) {
 			return $this->getAll([
@@ -471,5 +472,24 @@
 
 			$amountTotal = ($user->salary_per_day / 8) * ($workHoursInMinutes / 60);
 			return $amountTotal;
+		}
+
+		public function getUsersStatus($params = []) {
+			
+			$this->db->query(
+				"SELECT user.*, pos.attr_name as position_name,
+					dept.attr_name as department_name
+					FROM users as user
+
+
+					LEFT JOIN employment_details as ed
+					on ed.user_id = user.id
+					
+					LEFT JOIN employment_attributes as pos
+					on pos.id = ed.position_id
+					
+					LEFT JOIN employment_attributes as dep
+					on dep.id = ed.department_id "
+			);
 		}
 	}

@@ -118,7 +118,8 @@
 	_routeInstance('tk', 'TimekeepingController', $routes, [
 		'weblog' => 'webClockLogAction',
 		'formlog' => 'webFormAction',
-		'approve' => 'approve'
+		'approve' => 'approve',
+		'log' => 'log'
 	]);
 	
 	_routeInstance('leave', 'LeaveController', $routes, [
@@ -128,7 +129,8 @@
 	_routeInstance('requirement', 'RequirementController', $routes, [
 		'attachFile' => 'attachFile',
 		'respondentView' => 'respondentView',
-		'approveRespond' => 'approveRespond'
+		'approveRespond' => 'approveRespond',
+		'deleteResponse' => 'deleteResponse'
 	]);
 	
 	_routeInstance('viewer', 'ViewerController', $routes);
