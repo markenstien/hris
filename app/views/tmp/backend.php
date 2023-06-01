@@ -188,15 +188,6 @@
                     <?php endif?>
 
                     <?php if(isManagement()) :?>
-                    <li class="menu"  aria-expanded="true">
-                        <a href="<?php echo _route('govid:index', null)?>" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <i data-feather="file-text"></i>
-                                <span> GovIds </span>
-                            </div>
-                        </a>
-                    </li>
-
                     <li class="menu">
                         <a href="<?php echo _route('leave-point:index')?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
