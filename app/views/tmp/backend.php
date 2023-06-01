@@ -250,7 +250,7 @@
                         <a href="<?php echo _route('requirement:index')?>" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="aperture"></i>
-                                <span> Training & Certificates </span>
+                                <span> Training & Seminars </span>
                             </div>
                         </a>
                     </li>

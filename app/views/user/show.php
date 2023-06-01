@@ -31,12 +31,7 @@
                                 <td><?php echo $employmentForm->getLabel('department_id')?></td>
                                 <td><?php echo $employment->department_name?></td>
                             </tr>
-                            <tr>
-                                <td><?php echo $employmentForm->getLabel('reports_to')?></td>
-                                <td>
-                                    <?php echo wLinkDefault(_route('user:show', $employment->reports_to),$employment->manager_name);?>
-                                </td>
-                            </tr>
+                            
                             <tr>
                                 <td><?php echo $employmentForm->getLabel('position_id')?></td>
                                 <td><?php echo $employment->position_name?></td>

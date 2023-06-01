@@ -161,6 +161,12 @@
             return $this->view('timekeeping/edit', $this->data);
         }
 
+        public function show($id) {
+            $timesheet = $this->model->get($id);
+            $this->data['timesheet'] = $timesheet;
+            return $this->view('timekeeping/show', $this->data);
+        }
+
         public function webClockLogAction() {
             $req = request()->inputs();
             $this->model->log(whoIs('id'));

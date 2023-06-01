@@ -43,10 +43,14 @@
                     </table> 
                 </div>
 
-                <?php echo wLinkDefault(_route('requirement:approveRespond', $respondent->id), 'Approve', [
-                    'icon' => 'check-circle',
-                    'class' => 'btn btn-primary btn-sm'
-                ])?>
+                <?php
+                    if(isManagement()) {
+                        echo wLinkDefault(_route('requirement:approveRespond', $respondent->id), 'Approve', [
+                            'icon' => 'check-circle',
+                            'class' => 'btn btn-primary btn-sm mt-4'
+                        ]);
+                    }
+                ?>
             </div>
         </div>
     </div>

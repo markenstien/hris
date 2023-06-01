@@ -406,6 +406,7 @@
 			$this->db->query(
 				"SELECT tklog.*,
 					concat(user.first_name , ' ',user.last_name) as full_name,
+					concat(approver.first_name , ' ',approver.last_name) as approver_full_name,
 					ea.attr_name as position_name,
 					ea.attr_abbr_name as position_abbr_name,
 
@@ -416,6 +417,9 @@
 					FROM {$this->table} as tklog
 					LEFT JOIN users as user 
 					on user.id = tklog.user_id
+
+					LEFT JOIN users as approver
+					on approver.id = tklog.approved_by
 
 					LEFT JOIN employment_details as ed
 					on ed.user_id = user.id 
@@ -431,6 +435,13 @@
 			return $this->db->resultSet();
 		}
 
+		public function get($id) {
+			return $this->getAll([
+				'where' => [
+					'tklog.id' => $id
+				]
+			])[0] ?? false;
+		}
 		public function addFromForm($formData) {
 			$dateDifferenceInMinutes = timeDifferenceInMinutes($formData['time_in'], $formData['time_out']);
 			$workHourPay = $this->_computePayByTime($formData['user_id'], $dateDifferenceInMinutes);

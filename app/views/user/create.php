@@ -50,9 +50,8 @@
 			<h4>Work Details</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($employmentForm->getCol('department_id'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('position_id'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('reports_to'))?></div>
+					<div class="col-md-6"><?php __($employmentForm->getCol('department_id'))?></div>
+					<div class="col-md-6"><?php __($employmentForm->getCol('position_id'))?></div>
 				</div>
 			</div>
 
@@ -72,11 +71,6 @@
 					<div class="col-md-4"><?php __($form->getCol('email'));?></div>
 					<div class="col-md-4"><?php __($form->getCol('password'));?></div>
 				</div>
-
-				<label for="send_cred_to_user">
-					<input type="checkbox" id="send_cred_to_user">
-					Check to send Credentials to user.
-				</label>
 			</div>
 			<div class="form-group"><?php __( $form->get('submit' , ['value' => 'Save']) )?></div>
 		</div>

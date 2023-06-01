@@ -1,7 +1,7 @@
 <?php extract($data)?>
 
 <div class="table-responsive">
-    <table class="table table-bordered <?php echo isAdmin() ? 'dataTableAction' : 'dataTable'?>">
+    <table class="table table-bordered dataTableAction">
         <thead>
             <th>#</th>
             <th>User</th>
@@ -24,31 +24,35 @@
                     <td><?php echo $row->time_in?></td>
                     <td><?php echo $row->time_out?></td>
                     <td><?php echo $row->sheet_category?></td>
-                    <td><?php echo timeInMinutesToHours(timeDifferenceInMinutes($row->time_in, $row->time_out), true)?></td>
+                    <td><?php echo timeInMinutesToHours($row->duration, true)?></td>
                     <td><?php echo $row->status?></td>
                     <td><?php echo $row->remarks?></td>
                     <td>
                         
                         <?php
                             if(isEqual($row->status,'pending')) {
-                                echo wLinkDefault(_route('tk:edit', $row->id), 'Edit', [
-                                    'icon' => 'edit'
-                                ]);
+                                // echo wLinkDefault(_route('tk:edit', $row->id), 'Edit', [
+                                //     'icon' => 'edit'
+                                // ]);
                                 
 
-                                if(isEqual(whoIs('user_type'),'staff') || isEqual($row->reports_to, whoIs('id'))) {
+                                if(isManagement()) {
                                     echo wLinkDefault(_route('tk:approve', $row->id), 'Approve', [
                                         'icon' => 'check-circle'
                                     ]);
                                 }
                             } else {
-                                if(isEqual(whoIs('user_type'),'staff') || isEqual($row->reports_to, whoIs('id'))) {
+                                if(isManagement()) {
                                     echo wLinkDefault(_route('tk:delete', $row->id), 'Delete', [
                                         'icon' => 'trash',
                                         'class' => 'btn btn-danger btn-sm'
                                     ]);
                                 }
                             }
+
+                            echo wLinkDefault(_route('tk:show', $row->id), 'Show', [
+                                'icon' => 'eye'
+                            ]);
                         ?>
                     </td>
                 </tr>
