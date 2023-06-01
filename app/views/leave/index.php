@@ -4,6 +4,11 @@
             <a href="<?php echo _route('leave:create', null)?>" 
                 class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
         <?php endif?>
+        
+        <?php if(isManagement()) :?>
+            <a href="<?php echo _route('leave:summary', null)?>" 
+                class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm" title="Leave Summary"><i data-feather="book-open"></i></a>
+        <?php endif?>
 
         <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm">
             <i data-feather="filter"></i>
@@ -15,7 +20,7 @@
 <?php build('content') ?>
 <div class="statbox widget box box-shadow">
     <div class="widget-header">
-        <h4>Leave Management</h4>
+        <h4>Leave</h4>
         <?php if(isset($_GET['filter'])) :?>
             <?php echo wLinkDefault(_route('leave:index'), 'Remove Filter', ['icon' => 'x'])?>
         <?php endif?>
@@ -23,7 +28,7 @@
     <div class="widget-content widget-content-area">
         <?php Flash::show()?>
         <div class="table-responsive">
-            <table class="table table-bordered <?php echo isAdmin() ? 'dataTableAction' : 'dataTable'?>">
+            <table class="table table-bordered <?php echo isManagement() ? 'dataTableAction' : 'dataTable'?>">
                 <thead>
                     <th>#</th>
                     <th>User</th>
@@ -51,23 +56,33 @@
                             <td><?php echo $row->end_date?></td>
 
                             <td><?php echo $row->status?></td>
-                            <td><?php echo '....'?></td>
+                            <td><?php echo $row->remarks?></td>
                             <td><?php echo $row->approver_full_name?></td>
                             <td>
                                 <?php
-                                    if(isEqual(whoIs('id'), $row->user_id)) 
+                                    if(isEqual(whoIs('id'), $row->user_id) && isEqual($row->status,'pending')) {
+                                        $noAction = true;
                                         echo wLinkDefault(_route('leave:edit', $row->id), '', [
                                             'icon' => 'edit'
                                         ]);
+                                    }
                                 ?>
-                                &nbsp;
-
                                 <?php 
-                                    if(isEqual($row->reports_to, whoIs('id')) || isManagement()) {
+                                    if(isHr() && isEqual($row->status,'pending')) {
+                                        $noAction = true;
                                         echo wLinkDefault(_route('leave:approve', $row->id), '', [
                                             'icon' => 'check-circle'
                                         ]);
                                     }
+                                ?>
+                                <?php
+                                    if(isAdmin() && empty($row->remarks)) {
+                                        $noAction = true;
+                                        echo wLinkDefault(_route('leave:admin-approval', $row->id), '', [
+                                            'icon' => 'check-circle',
+                                            'class' => 'btn btn-sm btn-secondary'
+                                        ]);
+                                    }  
                                 ?>
                             </td>
                         </tr>
@@ -96,9 +111,14 @@
                             'action' => ''
                         ])
                     ?>
+                        <?php echo $form->getCol('status', [
+                            'required' => true
+                        ])?>
                         <?php echo $form->getCol('user_id')?>
-                        <?php echo $form->getCol('leave_category')?>
-                        <?php echo $form->getCol('status')?>
+                        <?php echo $form->getCol('leave_category', [
+                            'required' => false
+                        ])?>
+                        <?php echo $form->getCol('remarks')?>
 
                         <div class="mt-2">
                             <?php Form::submit('filter', 'Apply Filter')?>

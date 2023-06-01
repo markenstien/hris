@@ -195,10 +195,8 @@
 				$res = $this->model->create($post , 'profile');
 
 				//create user is an employee
-				if($res && isset($post['department_id'], $post['position_id'], $post['employment_date'])) {
+				if($res && $post['employment_date']) {
 					$this->employmentModel->create([
-						'department_id' => $post['department_id'],
-						'position_id' => $post['position_id'],
 						'employment_date' => $post['employment_date'],
 						'reports_to' => $post['reports_to'],
 						'salary_per_month' => $post['salary_per_month'],

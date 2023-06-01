@@ -89,6 +89,16 @@
             return redirect(_route('requirement:show', $this->eeRequirementRespondent->_getRetval('requirement_id')));
         }
 
+        public function declineRespond($respondentId) {
+            $respond = $this->eeRequirementRespondent->get($respondentId);
+
+            $this->eeRequirementRespondent->update([
+                'eerr_status' => 'declined'
+            ], $respondentId);
+
+            return redirect(_route('requirement:show', $respond->cert_id));
+        }
+
         public function attachFile() {
             if(isSubmitted()) {
                 $post = request()->posts();

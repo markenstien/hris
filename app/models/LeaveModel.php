@@ -97,6 +97,21 @@
             return parent::update($_fillables, $id);
         }
 
+        public function adminApproval($leaveData) {
+            $remarks = $leaveData['remarks'];
+
+            if(isEqual($remarks, 'Declined')) {
+                return $this->update([
+                    'status' => 'declined',
+                    'remarks' => 'declined by admin'
+                ], $leaveData['id']);
+            } else {
+                return $this->update([
+                    'remarks' => $remarks
+                ], $leaveData['id']);
+            }
+        }
+
         private function _validateLeaveEntry($leaveData) {
             
             if($leaveData['start_date'] > $leaveData['end_date']) {

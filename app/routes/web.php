@@ -123,13 +123,16 @@
 	]);
 	
 	_routeInstance('leave', 'LeaveController', $routes, [
-		'approve' => 'approve'
+		'approve' => 'approve',
+		'admin-approval' => 'adminApproval',
+		'summary' => 'leaveSummary'
 	]);
 
 	_routeInstance('requirement', 'RequirementController', $routes, [
 		'attachFile' => 'attachFile',
 		'respondentView' => 'respondentView',
-		'approveRespond' => 'approveRespond',
+		'approve-respond' => 'approveRespond',
+		'decline-respond' => 'declineRespond',
 		'deleteResponse' => 'deleteResponse'
 	]);
 	

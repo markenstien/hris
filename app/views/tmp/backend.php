@@ -62,6 +62,11 @@
             padding: 20px !important;
         }
 
+        @media print {
+            .noprint {
+                visibility: hidden;
+            }
+        }
     </style>
 
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
@@ -192,7 +197,7 @@
                         <a href="<?php echo _route('leave-point:index')?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="calendar"></i>
-                                <span> Leave Point </span>
+                                <span> Leave Credits </span>
                             </div>
                         </a>
                     </li>
@@ -213,29 +218,10 @@
                         <a href="<?php echo _route('tk:index')?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="clock"></i>
-                                <span> Timesheets </span>
+                                <span> Attendance </span>
                             </div>
                         </a>
                     </li>
-                    <?php if(isManagement()) :?>
-                    <li class="menu">
-                        <a href="<?php echo _route('emp-attr:department')?>" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <i data-feather="briefcase"></i>
-                                <span> Department </span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="<?php echo _route('emp-attr:position')?>" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <i data-feather="coffee"></i>
-                                <span> Positions </span>
-                            </div>
-                        </a>
-                    </li>
-                    <?php endif?>
                     
                     <li class="menu">
                         <a href="<?php echo _route('requirement:index')?>" class="dropdown-toggle">

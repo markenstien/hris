@@ -32,8 +32,6 @@
                         <thead>
                             <th>#</th>
                             <th>Employee Name</th>
-                            <th>Position</th>
-                            <th>Department</th>
                             <th>Logged In</th>
                             <th>Duration</th>
                             <th>Action</th>
@@ -45,8 +43,6 @@
                                 <tr>
                                     <td><?php echo ++$key?></td>
                                     <td><?php echo $row->full_name?></td>
-                                    <td><?php echo $row->position_name?></td>
-                                    <td><?php echo $row->department_name?></td>
                                     <td>
                                         <?php if($row->last_in && is_null($row->last_in->time_out)) :?>
                                             <p> <span class="badge badge-success"><?php echo date('h:i:s A', strtotime($row->last_in->time_in))?></span> </p>

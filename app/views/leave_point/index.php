@@ -1,7 +1,7 @@
 <?php build('content') ?>
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
-            <h4>Leave Point</h4>
+            <h4>Leave Credits</h4>
             <?php
                 if(isHr()) {
                     echo wLinkDefault(_route('leave-point:create'), 'Add Leave Point');

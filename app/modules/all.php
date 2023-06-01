@@ -48,6 +48,12 @@
             'approved',
             'declined',
             'cancelled'
+        ],
+
+        'admin-approval-category' => [
+            'Approve With Pay',
+            'Approve Without Pay',
+            'Declined'
         ]
     ];
 

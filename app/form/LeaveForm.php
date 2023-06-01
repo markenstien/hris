@@ -19,6 +19,7 @@
             $this->addStartDate();
             $this->addEndDate();
             //not recommended
+            $this->addRemarks();
             $this->addUser();
             $this->addStatus();
 
@@ -106,6 +107,18 @@
                 'options' => [
                     'label' => 'Status',
                     'option_values' => Module::get('ee_leave')['status']
+                ]
+            ]);
+        }
+
+        public function addRemarks() {
+            $this->add([
+                'name' => 'remarks',
+                'type' => 'select',
+                'class' => 'form-control',
+                'options' => [
+                    'label' => 'Remarks',
+                    'option_values' => Module::get('ee_leave')['admin-approval-category']
                 ]
             ]);
         }

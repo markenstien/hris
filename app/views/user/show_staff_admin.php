@@ -15,24 +15,28 @@
                 </div>
             </div>
 
-        </div>
+            <div class="statbox widget box box-shadow mb-2">
+                <div class="widget-header">
+                    <h4>Personal Details</h4>
+                </div>
 
-        <div class="col-md-8">
-            <div class="statbox widget box box-shadow mb-3">
-                <div class="widget-header">
-                    <h4>Certicates</h4>
-                </div>
                 <div class="widget-content widget-content-area">
-                    <h4>Underconstruction</h4>
-                </div>
-            </div>
-            
-            <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <h4>Timesheets</h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    ----
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><?php echo $_form->getLabel('email')?></td>
+                                <td><?php echo $user->email?></td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $_form->getLabel('phone_number')?></td>
+                                <td><?php echo $user->phone_number?></td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $_form->getLabel('address')?></td>
+                                <td><?php echo $user->address?></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php build('page-control')?>
 <div class="widget widget-content-area page-command-container">
-	<?php if(isHr()) :?>
+	<?php if(isManagement()) :?>
 		<a href="<?php echo _route('user:create', null, [
 			'user_type' => $userType
 		])?>"  class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>

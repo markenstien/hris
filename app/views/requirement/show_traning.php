@@ -1,7 +1,7 @@
 <?php build('content') ?>
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
-            <h4>Training Preview</h4>
+            <h4>Training & Seminar Preview</h4>
             <?php echo wLinkDefault(_route('requirement:index'), 'Back to lists', ['icon' => 'arrow-left-circle'])?>
         </div>
     </div>
@@ -41,66 +41,34 @@
                     <p><?php echo $training->description?></p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-5">
+
+            <?php echo wDivider(70)?>
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area">
-                    <h4>Recipients</h4>
-                    <div class="mt-5">
-                        <h5>Departments</h5>
-                        <?php if($training->is_all_department) :?>
-                            <span class="badge badge-primary">All Department</span>
-                        <?php else:?>
-                            <?php foreach($training->recipients as $key => $row) :?>
-                                <?php if(!isEqual($row->attr_key, 'department')) continue?>
-                                <span style="text-decoration:underline"><?php echo $row->attr_name?> (<?php echo $row->attr_abbr_name?>)</span> ,
-                            <?php endforeach?>
-                        <?php endif?>
-                    </div>
-
-                    <div class="mt-5">
-                        <h5>Positions</h5>
-                        <?php if($training->is_all_position) :?>
-                            <span class="badge badge-primary">All Positions</span>
-                        <?php else:?>
-                            <?php foreach($training->recipients as $key => $row) :?>
-                                <?php if(!isEqual($row->attr_key, 'position')) continue?>
-                                <span style="text-decoration:underline"><?php echo $row->attr_name?> (<?php echo $row->attr_abbr_name?>)</span> ,
-                            <?php endforeach?>
-                        <?php endif?>
-                    </div>
+                    <h4>Respondents</h4>
+                    <!-- Images -->
+                    <ul class="list-group list-group-media">
+                        <?php foreach($respondents as $key => $row) :?>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <div class="mr-3">
+                                        <img alt="avatar" src="<?php echo $row->profile ?? _path_tmp('assets/img/90x90.jpg')?>" 
+                                        class="img-fluid rounded-circle" style="width:50px;height:50px">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="tx-inverse"><?php echo $row->full_name?></h6>
+                                        <p class="mg-b-0"><i data-feather="info"></i><?php echo $row->eerr_status?></p>
+                                        <?php echo wLinkDefault(_route('requirement:respondentView', $row->id), 'Show Respondent', ['icon' => 'eye'])?>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endforeach?>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <?php echo wDivider('70')?>
-    <div class="row">
-        <div class="col-md-7">
-            <div class="statbox widget box box-shadow">
-            <div class="widget-content widget-content-area">
-                <h4>Respondents</h4>
-                <!-- Images -->
-                <ul class="list-group list-group-media">
-                    <?php foreach($respondents as $key => $row) :?>
-                        <li class="list-group-item list-group-item-action">
-                            <div class="media">
-                                <div class="mr-3">
-                                    <img alt="avatar" src="<?php echo $row->profile ?? _path_tmp('assets/img/90x90.jpg')?>" class="img-fluid rounded-circle" style="width:50px">
-                                </div>
-                                <div class="media-body">
-                                    <h6 class="tx-inverse"><?php echo $row->full_name?></h6>
-                                    <p class="mg-b-0"><?php echo $row->position_name?></p>
-                                    <?php echo wLinkDefault(_route('requirement:respondentView', $row->id), 'Show Respondent', ['icon' => 'eye'])?>
-                                </div>
-                            </div>
-                        </li>
-                    <?php endforeach?>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </div>
     <div class="modal fade trainingSubmissionModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

@@ -1,13 +1,5 @@
 <?php build('page-control')?>
     <div class="widget widget-content-area page-command-container">
-        <?php if(authType([USER_HR,USER_EMP])) :?>
-            <a href="<?php echo _route('tk:create', null, [
-                'user_id' => seal(whoIs('id')),
-                'type' => 'manual_form'
-            ])?>"  title="File Ac"
-                class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
-        <?php endif?>
-
         <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm">
             <i data-feather="filter"></i>
         </button>        
@@ -18,7 +10,7 @@
 <?php build('content') ?>
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
-            <h4>Timesheets</h4>
+            <h4>Attendance</h4>
         </div>
 
         <div class="widget-content widget-content-area">

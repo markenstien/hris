@@ -30,7 +30,8 @@
                 $validFilters = [
                     'user_id',
                     'leave_category',
-                    'status'
+                    'status',
+                    'remarks'
                 ];
 
                 $condition = [];
@@ -124,5 +125,46 @@
             $this->model->approve($id);
             Flash::set("Leave Approved");
             return redirect(_route('leave:index'));
+        }
+
+        public function adminApproval($id) {
+            if(isSubmitted()) {
+                $post = request()->posts();
+                $this->model->adminApproval($post);
+            }
+            $leave = $this->model->get($id);
+            $this->data['leave'] = $leave;
+            return $this->view('leave/admin_approval', $this->data);
+        }
+
+        public function leaveSummary() {
+            $users = $this->userModel->getAll([
+                'where' => [
+                    'user.user_type' => USER_EMP
+                ]
+            ]);
+
+            $summary = [];
+
+            foreach($users as $key => $row) {
+                $leaveReArranged = [];
+                $summary[$row->id]['user'] = $row;
+
+                $leavePoints = $this->leavePointModel->getTotalByUser($row->id); //format leave points
+
+                if($leavePoints) {
+                    foreach($leavePoints as $leaveKey => $leaveRow) {
+                        $leaveReArranged[$leaveRow->leave_point_category] = $leaveRow->total_point;
+                    }
+                }
+
+                $summary[$row->id]['leavePointSummary'] = $leaveReArranged;
+            }
+
+
+            $this->data['users'] = $users;
+            $this->data['summary'] = $summary;
+
+            return $this->view('leave/summary', $this->data);
         }
     }

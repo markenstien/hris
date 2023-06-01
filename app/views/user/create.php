@@ -48,18 +48,11 @@
 
 		<div class="widget-content widget-content-area">
 			<h4>Work Details</h4>
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-6"><?php __($employmentForm->getCol('department_id'))?></div>
-					<div class="col-md-6"><?php __($employmentForm->getCol('position_id'))?></div>
-				</div>
-			</div>
 
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_month'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('salary_per_day'))?></div>
-					<div class="col-md-4"><?php __($employmentForm->getCol('employment_date'))?></div>
+					<div class="col-md-6"><?php __($employmentForm->getCol('salary_per_month'))?></div>
+					<div class="col-md-6"><?php __($employmentForm->getCol('employment_date'))?></div>
 				</div>
 			</div>
 		</div>

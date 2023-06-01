@@ -44,17 +44,24 @@
                 </div>
 
                 <?php
-                    if(isManagement()) {
-                        echo wLinkDefault(_route('requirement:approveRespond', $respondent->id), 'Approve', [
+                    if(isAdmin()) {
+                        echo wLinkDefault(_route('requirement:approve-respond', $respondent->id), 'Approve', [
                             'icon' => 'check-circle',
-                            'class' => 'btn btn-primary btn-sm mt-4'
+                            'class' => 'btn btn-primary btn-sm mt-4 form-verify'
+                        ]);
+
+
+                        echo wLinkDefault(_route('requirement:decline-respond', $respondent->id), 'Decline', [
+                            'icon' => 'x-circle',
+                            'class' => 'btn btn-secondary btn-sm mt-4 form-verify'
                         ]);
                     }
 
                     if(isManagement() || isEqual(whoIs('id'), $respondent->user_id)) {
+                        echo '&nbsp;&nbsp;';
                         echo wLinkDefault(_route('requirement:deleteResponse', $respondent->id), 'Delete Request', [
                             'icon' => 'trash',
-                            'class' => 'btn btn-danger btn-sm mt-4'
+                            'class' => 'btn btn-danger btn-sm mt-4 form-verify'
                         ]);
                     }
                 ?>

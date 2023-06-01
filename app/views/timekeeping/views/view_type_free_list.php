@@ -5,7 +5,6 @@
         <thead>
             <th>#</th>
             <th>User</th>
-            <th>Position</th>
             <th>Time In</th>
             <th>Time Out</th>
             <th>Type</th>
@@ -20,7 +19,6 @@
                 <tr>
                     <td><?php echo ++$key?></td>
                     <td><?php echo $row->full_name?></td>
-                    <td><?php echo $row->position_abbr_name?></td>
                     <td><?php echo $row->time_in?></td>
                     <td><?php echo $row->time_out?></td>
                     <td><?php echo $row->sheet_category?></td>
@@ -30,27 +28,25 @@
                     <td>
                         
                         <?php
-                            if(isEqual($row->status,'pending')) {
-                                // echo wLinkDefault(_route('tk:edit', $row->id), 'Edit', [
-                                //     'icon' => 'edit'
-                                // ]);
+                            echo wLinkDefault(_route('tk:show', $row->id), 'Show', [
+                                'icon' => 'eye'
+                            ]);
 
+                            if(isEqual($row->status,'pending')) {
                                 if(isManagement()) {
                                     echo wLinkDefault(_route('tk:approve', $row->id), 'Approve', [
-                                        'icon' => 'check-circle'
+                                        'icon' => 'check-circle',
+                                        'class' => 'form-verify'
                                     ]);
                                 }
                             } else {
                                 if(isManagement()) {
                                     echo wLinkDefault(_route('tk:delete', $row->id), 'Delete', [
-                                        'icon' => 'trash'
+                                        'icon' => 'trash',
+                                        'class' => 'form-verify'
                                     ]);
                                 }
                             }
-
-                            echo wLinkDefault(_route('tk:show', $row->id), 'Show', [
-                                'icon' => 'eye'
-                            ]);
                         ?>
                     </td>
                 </tr>

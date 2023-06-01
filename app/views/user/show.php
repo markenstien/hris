@@ -14,7 +14,6 @@
                     <div class="text-center user-info">
                         <img src="<?php echo $user->profile ?? _path_tmp('assets/img/90x90.jpg')?>" alt="avatar" style="width:200px">
                         <p class=""><?php echo $employment->first_name . ' ' . $employment->last_name?></p>
-                        <div><i data-feather="coffee"></i> <?php echo $employment->position_name?></div>
                     </div>
                 </div>
             </div>
@@ -27,15 +26,6 @@
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive">
                         <table class="table table-bordered">
-                            <tr>
-                                <td><?php echo $employmentForm->getLabel('department_id')?></td>
-                                <td><?php echo $employment->department_name?></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><?php echo $employmentForm->getLabel('position_id')?></td>
-                                <td><?php echo $employment->position_name?></td>
-                            </tr>
                             <tr>
                                 <td><?php echo $_form->getLabel('email')?></td>
                                 <td><?php echo $user->email?></td>
@@ -112,7 +102,7 @@
             <?php if(isManagement() || isEqual(whoIs('id'), $user->id)) :?>
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
-                    <h4>Leave Points <?php if(authType(USER_HR)) {
+                    <h4>Leave Credits <?php if(authType(USER_HR)) {
                         ?> <a href="<?php echo _route('leave-point:create', $employment->user_id)?>"><i data-feather="edit"></i></a> <?php
                     }?></h4>
                 </div>
@@ -132,36 +122,10 @@
             </div>
             <?php endif?>
 
-            <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <h4>Underlings</h4>
-                </div>
-                <div class="widget-content widget-content-area">
-                    <!-- Images -->
-                    <ul class="list-group list-group-media">
-                        <?php foreach($underlings as $key => $row) :?>
-                            <li class="list-group-item list-group-item-action">
-                                <div class="media">
-                                    <div class="mr-3">
-                                        <img alt="avatar" src="<?php echo $row->profile?>" class="img-fluid rounded-circle" style="width:75px">
-                                    </div>
-                                    <div class="media-body">
-                                        <h6 class="tx-inverse"><?php echo $row->first_name . ' ' .$row->last_name?></h6>
-                                        <p class="mg-b-0"><?php echo $row->position_name?></p>
-
-                                        <?php echo wLinkDefault(_route('user:show', $row->user_id), 'Preview', ['icon' => 'eye'])?>
-                                    </div>
-                                </div>
-                            </li>
-                        <?php endforeach?>
-                    </ul>
-                </div>
-            </div>
-
             <?php if($certificates) :?>
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
-                    <h4>Certificates</h4>
+                    <h4>Training and Seminars</h4>
                 </div>
                 <div class="widget-content widget-content-area">
                     <table class="table table-bordered">

@@ -1,28 +1,8 @@
 <?php build('content')?>
-	<?php if(authType(USER_EMP)) :?>
-	<div class="card">
-		<div class="card-body">
-			<?php if($isLoggedIn) :?>
-				<h5>Time In : <span id="last_time_in"><?php echo date('Y-m-d h:i:s A', strtotime($lastLog->time_in))?></span></h5>
-				<h5>Duration :<span id="duration"></h5>
-
-				<a href="<?php echo _route('tk:weblog', null, [
-					'returnTo' => seal(_route('user:dashboard'))
-				])?>" class="btn btn-danger btn-lg">Clock Out</a>    
-			<?php else:?>
-				<a href="<?php echo _route('tk:weblog', null, [
-					'returnTo' => seal(_route('user:dashboard'))
-				])?>" class="btn btn-primary btn-lg">Clock In</a>    
-			<?php endif?>
-		</div>
-	</div>
-	<?php endif?>
-
 	<?php echo wDivider(40)?>
-
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Certification and Training Program</h4>
+			<h4 class="card-title">Training and Seminars</h4>
 		</div>
 
 		<div class="card-body">

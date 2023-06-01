@@ -2,7 +2,7 @@
 <div class="col-md-5 mx-auto">
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
-            <h4>Leave Point Management</h4>
+            <h4>Manage Leave Credits</h4>
         </div>
         <div class="widget-content widget-content-area">
             <?php echo $form->start()?>
