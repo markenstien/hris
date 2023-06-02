@@ -232,6 +232,17 @@
                         </a>
                     </li>
 
+                    <?php if(isAdmin()) :?>
+                    <li class="menu">
+                        <a href="<?php echo _route('setting:guard-manage')?>" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <i data-feather="settings"></i>
+                                <span> Settings  </span>
+                            </div>
+                        </a>
+                    </li>
+                    <?php endif?>
+
                     <li class="menu">
                         <a href="<?php echo _route('auth:logout')?>" class="dropdown-toggle">
                             <div class="">

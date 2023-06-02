@@ -140,7 +140,8 @@
 	_routeInstance('leave-point', 'LeavePointController', $routes);
 	_routeInstance('setting', 'SettingsController', $routes,[
 		'guard-panel' => 'panelGuard',
-		'guard-logout' => 'logoutGuard'
+		'guard-logout' => 'logoutGuard',
+		'guard-manage' => 'manageGuard'
 	]);
 	_routeInstance('page', 'PageController', $routes);
 	
