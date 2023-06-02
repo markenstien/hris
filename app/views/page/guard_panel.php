@@ -22,7 +22,7 @@
         <div class="card mt-5">
             <div class="card-header text-center">
                 <h4 class="card-title">Employee Timekeeping</h4>
-                <?php echo wLinkDefault(_route('auth:login'), 'to login page')?>
+                <?php echo wLinkDefault(_route('setting:guard-logout'), 'Logout')?>
             </div>
 
             <div class="card-body">

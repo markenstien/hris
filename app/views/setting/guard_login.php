@@ -19,19 +19,17 @@
     <div class="col-md-3 mx-auto">
         <?php echo wDivider(70)?>
         <div class="text-center mb-5"> <img src="<?php echo _path_upload_get('logo.png')?>" alt="" style="width:150px"> </div>
-        <h1>Login To <span class="brand-name"><?php echo APP_NAME?></h1>
+        <h1>Login To Guard Panel</h1>
         <!-- <p class="signup-link">New Here? <a href="auth_register.html">Create an account</a></p> -->
         <?php echo $form->start()?>
             <div class="form">
                 <?php Flash::show()?>
                 <div id="username-field" class="field-wrapper input mb-3">
-                    <?php echo $form->getCol('email')?>
+                    <?php echo $form->getCol('username')?>
                 </div>
 
                 <div id="password-field" class="field-wrapper input mb-4">
-                    <?php echo $form->getCol('password',[
-                        'required' => true
-                    ])?>
+                    <?php echo $form->getCol('password')?>
                 </div>
                 <div class="d-sm-flex justify-content-between">
                     <div class="field-wrapper toggle-pass">
@@ -48,7 +46,7 @@
             </div>
         <?php echo $form->end()?>
         <?php echo wDivider(20)?>
-        <?php echo wLinkDefault(_route('setting:guard-panel'),'Guard Panel')?>
+        <?php echo wLinkDefault(_route('setting:guard-panel'),'Staff and Employee Login')?>
         <?php echo wDivider(40)?>
         <p class="terms-conditions">© <?php echo date('Y') ?> All Rights Reserved. 
         <a href="#"><?php echo APP_NAME?></a> is a product of <?php echo COMPANY_NAME?>.

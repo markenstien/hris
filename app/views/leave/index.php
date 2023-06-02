@@ -20,7 +20,7 @@
 <?php build('content') ?>
 <div class="statbox widget box box-shadow">
     <div class="widget-header">
-        <h4>Leave</h4>
+        <h4>Leave Request</h4>
         <?php if(isset($_GET['filter'])) :?>
             <?php echo wLinkDefault(_route('leave:index'), 'Remove Filter', ['icon' => 'x'])?>
         <?php endif?>

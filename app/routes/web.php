@@ -138,6 +138,13 @@
 	
 	_routeInstance('viewer', 'ViewerController', $routes);
 	_routeInstance('leave-point', 'LeavePointController', $routes);
+	_routeInstance('setting', 'SettingsController', $routes,[
+		'guard-panel' => 'panelGuard',
+		'guard-logout' => 'logoutGuard'
+	]);
+	_routeInstance('page', 'PageController', $routes);
+	
+	
 	
 	return $routes;
 ?>

@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <div class="statbox widget box box-shadow">
             <div class="widget-header">
-                <h4>Leave Request</h4>
+                <h4>Create Leave Request</h4>
                     <?php echo wLinkDefault(_route('leave:index'), 'Back to lists', [
                         'icon' => 'arrow-left-circle'
                     ]);
