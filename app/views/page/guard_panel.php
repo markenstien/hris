@@ -146,7 +146,7 @@
                 "sSearchPlaceholder": "Search...",
                "sLengthMenu": "Results :  _MENU_",
             },
-            "order": [[ 5, "desc" ]],
+            "order": [[ 3, "desc" ]],
             "stripeClasses": [],
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7,
