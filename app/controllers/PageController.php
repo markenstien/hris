@@ -24,7 +24,9 @@
             $users = $this->userModel->getAll([
                 'where' => [
                     'user_type' => USER_EMP
-                ]
+                ],
+
+                'order' => 'first_name asc'
             ]);
             
             foreach($users as $key => $row) {

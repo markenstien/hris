@@ -21,7 +21,7 @@
     <div class="col-md-8 mx-auto">
         <div class="card mt-5">
             <div class="card-header text-center">
-                <h4 class="card-title">Employee Timekeeping</h4>
+                <h4 class="card-title">Employee Attendance</h4>
                 <?php echo wLinkDefault(_route('setting:guard-logout'), 'Logout')?>
             </div>
 

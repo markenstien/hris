@@ -4,7 +4,7 @@
 			<?php Flash::show()?>
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Login-Form</h4>
+					<h4 class="card-title"><?php echo APP_NAME?></h4>
 
 					<a href="<?php echo _route('appointment:appointment_form')?>">Create Appointment</a>
 				</div>

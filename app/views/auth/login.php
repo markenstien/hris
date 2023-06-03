@@ -19,7 +19,7 @@
     <div class="col-md-3 mx-auto">
         <?php echo wDivider(70)?>
         <div class="text-center mb-5"> <img src="<?php echo _path_upload_get('logo.png')?>" alt="" style="width:150px"> </div>
-        <h1>Login To <span class="brand-name"><?php echo APP_NAME?></h1>
+        <h1><span class="brand-name"><?php echo APP_NAME?></h1>
         <!-- <p class="signup-link">New Here? <a href="auth_register.html">Create an account</a></p> -->
         <?php echo $form->start()?>
             <div class="form">

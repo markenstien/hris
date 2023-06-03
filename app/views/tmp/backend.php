@@ -84,7 +84,7 @@
                 <li class="nav-item align-self-center page-heading">
                     <div class="page-header">
                         <div class="page-title">
-                            <h3><?php echo $_global['pageTitle'] ?? COMPANY_NAME_ABBR?></h3>
+                            <h3 style="text-transform:uppercase;"><?php echo $_global['pageTitle'] ?? COMPANY_NAME_ABBR?></h3>
                         </div>
                     </div>
                 </li>
@@ -147,7 +147,8 @@
 
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-text">
-                        <a href="index.html" class="nav-link"> <?php echo APP_NAME?> </a>
+                        <a href="<?php echo _route('user:dashboard')?>" class="nav-link">
+                        <img src="<?php echo _path_upload_get('logo.png')?>" alt="" style="width: 30px;"> <?php echo APP_NAME?> </a>
                     </li>
                     <li class="nav-item toggle-sidebar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather sidebarCollapse feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
