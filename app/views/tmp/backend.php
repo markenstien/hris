@@ -176,9 +176,9 @@
                                 <i data-feather="users"></i>
                                 <span>
                                     <?php if(whoIs('user_type',[USER_ADMIN,USER_SUB_ADMIN])) :?>
-                                        Staff Info
-                                    <?php else:?>
                                         Admin Info
+                                    <?php else:?>
+                                        Staff Info
                                     <?php endif?>
                                 </span>
                             </div>
