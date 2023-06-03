@@ -215,7 +215,7 @@
                         <a href="<?php echo _route('leave:index')?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="calendar"></i>
-                                <span> Leave </span>
+                                <span> Leave Request</span>
                             </div>
                         </a>
                     </li>
@@ -357,9 +357,6 @@
                 "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
                     buttons: {
                         buttons: [
-                            { extend: 'copy', className: 'btn btn-sm' },
-                            { extend: 'csv', className: 'btn btn-sm' },
-                            { extend: 'excel', className: 'btn btn-sm' },
                             { extend: 'print', className: 'btn btn-sm' }
                         ]
                     },

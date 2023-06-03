@@ -17,7 +17,7 @@
                 <table class="table table-bordered dataTable">
                     <thead>
                         <th>#</th>
-                        <th>Code</th>
+                        <!-- <th>Code</th> -->
                         <th>Training</th>
                         <th>Description</th>
                         <th>Importance</th>
@@ -28,7 +28,7 @@
                         <?php foreach($requirements as $key => $row) :?>
                             <tr>
                                 <td><?php echo ++$key?></td>
-                                <td><?php echo $row->req_code?></td>
+                                <!-- <td><?php echo $row->req_code?></td> -->
                                 <td><?php echo $row->req_title?></td>
                                 <td><?php echo crop_string($row->description, 100)?></td>
                                 <td><?php echo $row->importance?></td>

@@ -38,8 +38,16 @@
 			</div>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-md-4"><?php __($form->getCol('birthdate')); ?></div>
 					<div class="col-md-4"><?php __($form->getCol('gender')); ?></div>
+					<div class="col-md-4"><?php __($form->getCol('birthdate')); ?></div>
+					<div class="col-md-4"><?php __($form->getCol('place_of_birth')); ?></div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6"><?php __($form->getCol('civil_status')); ?></div>
+					<div class="col-md-6"><?php __($form->getCol('religion')); ?></div>
 				</div>
 			</div>
 		</div>

@@ -19,6 +19,10 @@ use Module;
 
 			$this->initCreate();
 
+			$this->addReligion();
+			$this->addCivilStatus();
+			$this->addPlaceOfBirth();
+
 			$this->addAddress();
 			$this->addPhoneNumber();
 			$this->addEmail();
@@ -271,6 +275,68 @@ use Module;
 				],
 
 				'value' => 'Save user'
+			]);
+		}
+
+
+		public function addReligion()
+		{
+			$this->add([
+				'type' => 'text',
+				'name' => 'religion',
+				'class' => 'form-control',
+				'required' => true,
+				'options' => [
+					'label' => 'Religion',
+				],
+
+				'attributes' => [
+					'id' => 'id_religion',
+					'placeholder' => 'Religion'
+				]
+			]);
+		}
+
+		public function addCivilStatus()
+		{
+			$this->add([
+				'type' => 'select',
+				'name' => 'civil_status',
+				'class' => 'form-control',
+				'required' => true,
+				'options' => [
+					'label' => 'Civil Status',
+					'option_values' => [
+						'Single',
+						'Married',
+						'Separated',
+						'Divorced',
+						'Widowed'
+					]
+				],
+
+				'attributes' => [
+					'id' => 'id_civil_status',
+					'placeholder' => 'Civil Status'
+				]
+			]);
+		}
+
+		public function addPlaceOfBirth()
+		{
+			$this->add([
+				'type' => 'text',
+				'name' => 'place_of_birth',
+				'class' => 'form-control',
+				'required' => true,
+				'options' => [
+					'label' => 'Place of birth',
+				],
+
+				'attributes' => [
+					'id' => 'id_place_of_birth',
+					'placeholder' => 'Place of Birth'
+				]
 			]);
 		}
 	}

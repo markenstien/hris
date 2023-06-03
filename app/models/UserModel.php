@@ -23,7 +23,10 @@
 			'user_type',
 			'profile',
 			'updated_at',
-			'is_verified'
+			'is_verified',
+			'place_of_birth',
+			'civil_status',
+			'religion'
 		];
 
 		public function verification($id)

@@ -38,7 +38,7 @@ use Module;
                 'class' => 'form-control',
                 'required' => true,
                 'options' => [
-                    'label' => 'Training Title'
+                    'label' => 'Description'
                 ],
                 'attributes' => [
                     'rows' => 3

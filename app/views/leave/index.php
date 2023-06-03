@@ -1,6 +1,6 @@
 <?php build('page-control')?>
     <div class="widget widget-content-area page-command-container">
-        <?php if(authType([USER_HR,USER_EMP])) :?>
+        <?php if(authType([USER_EMP])) :?>
             <a href="<?php echo _route('leave:create', null)?>" 
                 class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
         <?php endif?>
@@ -41,7 +41,9 @@
                     <th>Status</th>
                     <th>Remarks</th>
                     <th>Approved By</th>
+                    <?php if(isManagement()) :?>
                     <th>Action</th>
+                    <?php endif?>
                 </thead>
 
                 <tbody>
@@ -58,6 +60,8 @@
                             <td><?php echo $row->status?></td>
                             <td><?php echo $row->remarks?></td>
                             <td><?php echo $row->approver_full_name?></td>
+
+                            <?php if(isManagement()) :?>
                             <td>
                                 <?php
                                     if(isEqual(whoIs('id'), $row->user_id) && isEqual($row->status,'pending')) {
@@ -85,6 +89,7 @@
                                     }  
                                 ?>
                             </td>
+                            <?php endif?>
                         </tr>
                     <?php endforeach?>
                 </tbody>

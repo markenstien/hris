@@ -15,6 +15,17 @@
                         <img src="<?php echo $user->profile ?? _path_tmp('assets/img/90x90.jpg')?>" alt="avatar" style="width:200px">
                         <p class=""><?php echo $employment->first_name . ' ' . $employment->last_name?></p>
                     </div>
+                    
+                    <div>
+                        <ul class="list-unstyled">
+                            <li>First Name : <?php echo $user->first_name?></li>
+                            <li>Last Name : <?php echo $user->last_name?></li>
+                            <li>Gender : <?php echo $user->gender?></li>
+                            <li>Civil Status : <?php echo $user->civil_status?></li>
+                            <li>Address : <?php echo $user->address?></li>
+                            <li>Religion : <?php echo $user->religion?></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -61,7 +72,10 @@
                 <div class="widget-content widget-content-area">
                     <?php if(!$schedule) :?>
                         <?php if(isManagement() || isEqual(whoIs('id'), $employment->reports_to)) :?>
-                            <?php echo wLinkDefault(_route('schedule:create', null, ['user_id' => $user->id]), 'Create Schedule')?>
+                            <?php echo wLinkDefault(_route('schedule:create', null, 
+                            ['user_id' => $user->id]), 'Create Schedule')?>
+                        <?php else:?>
+                            <p>You have no schedule yet.</p>
                         <?php endif?>
                     <?php else:?>
                         <div class="table-responsive">
