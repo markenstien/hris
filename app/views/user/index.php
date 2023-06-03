@@ -1,6 +1,6 @@
 <?php build('page-control')?>
 <div class="widget widget-content-area page-command-container">
-	<?php if(isManagement()) :?>
+	<?php if(isHr()) :?>
 		<a href="<?php echo _route('user:create', null, [
 			'user_type' => $userType
 		])?>"  class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="user-plus"></i></a>
@@ -36,11 +36,11 @@
 								<td><?php echo $row->email?></td>
 								<td><?php echo $row->user_type?></td>
 								<td>
-									<?php
-										__([
-											btnView(_route('user:show' , $row->id)),
-											btnEdit(_route('user:edit' , $row->id))
-										])
+									<?php 
+										__(wLinkDefault(_route('user:show', $row->id), '', ['icon' => 'eye']));
+										if(isHr()) {
+											__(wLinkDefault(_route('user:edit', $row->id), '', ['icon' => 'edit']));
+										}
 									?>
 								</td>
 							</tr>

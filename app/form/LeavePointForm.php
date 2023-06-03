@@ -50,7 +50,7 @@
                 'type' => 'select',
                 'required' => true,
                 'options' => [
-                    'label' => 'Leave Category',
+                    'label' => 'Type of Leave',
                     'option_values' => Module::get('ee_leave')['categories']
                 ],
                 'class' => 'form-control'

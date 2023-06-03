@@ -11,9 +11,6 @@
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <tr>
-                        <td colspan="2" style="background-color:var(--danger);color:#fff">Action</td>
-                    </tr>
-                    <tr>
                         <td><?php Form::select('remarks', Module::get('ee_leave')['admin-approval-category'], $leave->remarks , ['class' => 'form-control', 'required' => true])?></td>
                         <td><?php Form::submit('', 'Apply')?></td>
                     </tr>
@@ -33,7 +30,7 @@
                         <td><?php echo $leave->start_date?></td>
                     </tr>
                     <tr>
-                        <td>Hr Approver Name</td>
+                        <td>Approved By</td>
                         <td><?php echo $leave->approver_full_name?></td>
                     </tr>
                 </table>

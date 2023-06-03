@@ -11,11 +11,14 @@
                 <div class="widget-content widget-content-area">
                     <h4>Training/Seminar</h4>
                     <?php Flash::show()?>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary btn-sm mb-3" 
-                        data-toggle="modal" 
-                        data-target=".trainingSubmissionModal">Submit Training</a>
-                    </div>
+                    
+                    <?php if(authType(USER_EMP)) :?>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-primary btn-sm mb-3" 
+                            data-toggle="modal" 
+                            data-target=".trainingSubmissionModal">Submit Training</a>
+                        </div>
+                    <?php endif?>
                     <table class="table table-bordered">
                         <tr>
                             <td>Code</td>

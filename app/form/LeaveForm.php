@@ -71,7 +71,7 @@
                 'type' => 'select',
                 'class' => 'form-control',
                 'options' => [
-                    'label' => 'Reason',
+                    'label' => 'Type of Leave',
                     'option_values' => Module::get('ee_leave')['categories']
                 ],
                 'required' => true

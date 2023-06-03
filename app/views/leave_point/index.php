@@ -14,7 +14,7 @@
                     <thead>
                         <th>#</th>
                         <th>Employee</th>
-                        <th>Leave Category</th>
+                        <th>Type of Leave</th>
                         <th>Point</th>
                         <th>Remarks</th>
                         <th>Date</th>
@@ -25,8 +25,8 @@
                             <tr>
                                 <td><?php echo ++$key?></td>
                                 <td><?php echo $row->full_name?></td>
-                                <td><?php echo amountHTML($row->point)?></td>
                                 <td><?php echo $row->leave_point_category?></td>
+                                <td><?php echo $row->point?></td>
                                 <td><?php echo $row->remarks?></td>
                                 <td><?php echo $row->created_at?></td>
                             </tr>
