@@ -1,3 +1,12 @@
+<?php build('page-control')?>
+    <?php if(isManagement()) :?>
+        <div class="widget widget-content-area page-command-container">
+            <a href="<?php echo _route('leave:summary', null)?>" 
+                class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm" title="Leave Summary">
+                <i data-feather="book-open"></i></a>
+        </div>
+    <?php endif?>
+<?php endbuild()?>
 <?php build('content') ?>
     <div class="statbox widget box box-shadow">
         <div class="widget-header">

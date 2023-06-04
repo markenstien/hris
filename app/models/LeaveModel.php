@@ -163,8 +163,13 @@
 
                     $leaveData['start_date'] = $startingDate;
                     $leaveData['end_date'] = $startingDate;
-
                     $isOkay = $this->_addEntry($leaveData);
+
+                    if($isOkay) {
+                        parent::addMessage("{$leaveData['leave_category']} on {$startingDate} has been filed");
+                    }else{
+                        return false;
+                    }
                 }
 
                 parent::addMessage("Multiple leave date has been created");
@@ -187,6 +192,8 @@
                  //deduct uf sucess
                 $this->_deductLeavePoint($leaveData['user_id'], $leaveData['leave_category']);
                 return parent::store($_fillables);       
+            } else {
+                return false;
             }
 
             return false;
@@ -223,7 +230,7 @@
                     if(isEqual($leave->id, $id))
                         return true;
                 }
-                $this->addError("Leave already exist");
+                $this->addError("Leave {$leaveType} on {$startDate} already exist ". wLinkDefault(_route('leave:show', $leave->id), 'Show'));
                 return false;
             } else {
                 return true;

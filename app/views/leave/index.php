@@ -4,11 +4,6 @@
             <a href="<?php echo _route('leave:create', null)?>" 
                 class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i data-feather="plus-circle"></i></a>
         <?php endif?>
-        
-        <?php if(isManagement()) :?>
-            <a href="<?php echo _route('leave:summary', null)?>" 
-                class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm" title="Leave Summary"><i data-feather="book-open"></i></a>
-        <?php endif?>
 
         <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm">
             <i data-feather="filter"></i>

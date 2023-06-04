@@ -35,7 +35,9 @@
                     <?php Form::open(['method' => 'get'])?>
                         <?php echo $_formCommon->getCol('start_date');  ?>
                         <?php echo $_formCommon->getCol('end_date');  ?>
-                        <div class="mt-2 form-grou">
+
+                        <?php if(isManagement()) :?>
+                        <div class="mt-2 form-group">
                             <?php
                                 Form::label('User');
                                 Form::select('user_id', $userArray, '', [
@@ -43,6 +45,9 @@
                                 ]);
                             ?>
                         </div>
+                        <?php else:?>
+                            <?php Form::hidden('user_id', whoIs('id'))?>
+                        <?php endif?>
                         
                         <div class="mt-2">
                             <?php

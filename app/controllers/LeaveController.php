@@ -51,12 +51,16 @@
                 if(!isManagement()) {
                     $leaves = $this->model->getAll([
                         'where' => [
-                            'el.user_id' => whoIs('id')
+                            'el.user_id' => whoIs('id'),
+                            'el.status' => 'pending'
                         ]
                     ]);
                 } else {
                     $leaves = $this->model->getAll([
-                        'limit' => '20'
+                        'limit' => '30',
+                        'where' => [
+                            'el.status' => 'pending'
+                        ]
                     ]);
                 }
             }
@@ -139,6 +143,12 @@
             $leave = $this->model->get($id);
             $this->data['leave'] = $leave;
             return $this->view('leave/admin_approval', $this->data);
+        }
+
+        public function show($id) {
+            $leave = $this->model->get($id);
+            $this->data['leave'] = $leave;
+            return $this->view('leave/show', $this->data);
         }
 
         public function leaveSummary() {
