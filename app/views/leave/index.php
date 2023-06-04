@@ -29,7 +29,7 @@
                     <th>User</th>
                     <th>Category</th>
 
-                    <th>Referene Date</th>
+                    <th>Reference Date</th>
                     <th>Start Date</th>
                     <th>End Date</th>
 
@@ -62,7 +62,7 @@
                                         ]);
                                     }
 
-                                    if(authType([USER_HR,USER_EMP]) && isEqual($row->status,'pending')) {
+                                    if(authType([USER_EMP]) && isEqual($row->status,'pending')) {
                                         echo wLinkDefault(_route('leave:delete', $row->id), '', [
                                             'icon' => 'trash',
                                             'class' => 'text-danger form-verify'
