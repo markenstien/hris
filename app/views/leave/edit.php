@@ -12,6 +12,7 @@
             <?php echo $form->start()?>
                 <?php 
                     echo $form->getCol('id');
+                    echo $form->getCol('user_id');
                 ?>
                 <?php echo $form->getCol('leave_category')?>
                 <?php echo $form->getCol('date_filed')?>

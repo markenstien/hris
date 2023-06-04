@@ -6,12 +6,13 @@
             <?php echo wLinkDefault(_route('leave:index'), 'Back to list', ['icon' => 'arrow-left-circle'])?>
         </div>
         <div class="widget-content widget-content-area">
+            <?php Flash::show()?>
             <?php Form::open(['method' => 'post'])?>
             <?php Form::hidden('id', $leave->id)?>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <tr>
-                        <td><?php Form::select('remarks', Module::get('ee_leave')['admin-approval-category'], $leave->remarks , ['class' => 'form-control', 'required' => true])?></td>
+                        <td><?php Form::select('remarks', Module::get('ee_leave')['admin-approval-category'], '', ['class' => 'form-control', 'required' => true])?></td>
                         <td><?php Form::submit('', 'Apply')?></td>
                     </tr>
                     <tr>
@@ -33,6 +34,16 @@
                         <td>Approved By</td>
                         <td><?php echo $leave->approver_full_name?></td>
                     </tr>
+
+                    <tr>
+                        <td>Status</td>
+                        <td><?php echo $leave->status?></td>
+                    </tr>
+                    <tr>
+                        <td>Remarks</td>
+                        <td><?php echo $leave->remarks?></td>
+                    </tr>
+                    
                 </table>
             </div>
             <?php Form::close()?>

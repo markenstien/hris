@@ -16,14 +16,10 @@
                         <div class="text-center">
                             <a href="#" class="btn btn-primary btn-sm mb-3" 
                             data-toggle="modal" 
-                            data-target=".trainingSubmissionModal">Submit Training</a>
+                            data-target=".trainingSubmissionModal">Apply Training</a>
                         </div>
                     <?php endif?>
                     <table class="table table-bordered">
-                        <tr>
-                            <td>Code</td>
-                            <td><?php echo $training->req_code?></td>
-                        </tr>
                         <tr>
                             <td>Training Title</td>
                             <td><?php echo $training->req_title?></td>

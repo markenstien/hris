@@ -41,9 +41,7 @@
                     <th>Status</th>
                     <th>Remarks</th>
                     <th>Approved By</th>
-                    <?php if(isManagement()) :?>
                     <th>Action</th>
-                    <?php endif?>
                 </thead>
 
                 <tbody>
@@ -60,14 +58,19 @@
                             <td><?php echo $row->status?></td>
                             <td><?php echo $row->remarks?></td>
                             <td><?php echo $row->approver_full_name?></td>
-
-                            <?php if(isManagement()) :?>
                             <td>
                                 <?php
                                     if(isEqual(whoIs('id'), $row->user_id) && isEqual($row->status,'pending')) {
                                         $noAction = true;
                                         echo wLinkDefault(_route('leave:edit', $row->id), '', [
                                             'icon' => 'edit'
+                                        ]);
+                                    }
+
+                                    if(authType([USER_HR,USER_EMP]) && isEqual($row->status,'pending')) {
+                                        echo wLinkDefault(_route('leave:delete', $row->id), '', [
+                                            'icon' => 'trash',
+                                            'class' => 'text-danger form-verify'
                                         ]);
                                     }
                                 ?>
@@ -89,7 +92,6 @@
                                     }  
                                 ?>
                             </td>
-                            <?php endif?>
                         </tr>
                     <?php endforeach?>
                 </tbody>

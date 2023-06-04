@@ -97,6 +97,14 @@
             return parent::update($_fillables, $id);
         }
 
+        public function updateWithValidation($leaveData,$id) {
+            if($this->_leaveExistValidate($leaveData['start_date'], 
+            $leaveData['user_id'], $leaveData['leave_category'], $id)) {
+                return $this->update($leaveData,$id);
+            }
+            return false;
+        }
+
         public function adminApproval($leaveData) {
             $remarks = $leaveData['remarks'];
 
@@ -155,6 +163,7 @@
 
                     $leaveData['start_date'] = $startingDate;
                     $leaveData['end_date'] = $startingDate;
+
                     $isOkay = $this->_addEntry($leaveData);
                 }
 
@@ -174,10 +183,13 @@
                 return false;
             }
 
-            //deduct uf sucess
-            $this->_deductLeavePoint($leaveData['user_id'], $leaveData['leave_category']);
-            
-            return parent::store($_fillables);
+            if($this->_leaveExistValidate($leaveData['start_date'], $leaveData['user_id'], $leaveData['leave_category'])) {
+                 //deduct uf sucess
+                $this->_deductLeavePoint($leaveData['user_id'], $leaveData['leave_category']);
+                return parent::store($_fillables);       
+            }
+
+            return false;
         }
 
         private function _verifyLeavePoint($userId, $leaveType) {
@@ -192,5 +204,29 @@
                 'point' => -1,
                 'remarks' => 'Leave Request : '.$leaveType
             ]);
+        }
+
+        /**
+         * returns false if leave date exist
+         * means not valid
+         */
+        private function _leaveExistValidate($startDate,$userId,$leaveType, $id = null) {
+            $leave = parent::single([
+                'start_date' => $startDate,
+                'user_id' => $userId,
+                'leave_category' => $leaveType  
+            ]);
+            
+            if($leave) {
+                if(!is_null($id)) {
+                    //check equal id then update okay
+                    if(isEqual($leave->id, $id))
+                        return true;
+                }
+                $this->addError("Leave already exist");
+                return false;
+            } else {
+                return true;
+            }
         }
     }

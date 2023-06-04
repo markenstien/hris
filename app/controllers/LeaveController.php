@@ -105,7 +105,7 @@
 
             if(isSubmitted()) {
                 $post = request()->posts();
-                $this->model->update($post, $post['id']);
+                $this->model->updateWithValidation($post, $post['id']);
 
                 Flash::set("Timesheet updated");
                 return redirect(_route('leave:index'));
@@ -131,6 +131,10 @@
             if(isSubmitted()) {
                 $post = request()->posts();
                 $this->model->adminApproval($post);
+
+                Flash::set("Leave Request updated");
+
+                return redirect(_route('leave:admin-approval', $id));
             }
             $leave = $this->model->get($id);
             $this->data['leave'] = $leave;
