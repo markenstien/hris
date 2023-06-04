@@ -31,7 +31,7 @@
                 ]
             ]);
 
-            $usersArray = arr_layout_keypair($users,['id','first_name@last_name']);
+            $usersArray = arr_layout_keypair($users,['id','first_name@last_name@user_code']);
             $this->add([
                 'name' => 'user_id',
                 'type' => 'select',
