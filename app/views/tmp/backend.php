@@ -174,7 +174,11 @@
                         ])?>" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <i data-feather="users"></i>
-                                <span>Staff Info</span>
+                                <?php if(isEqual(whoIs('user_type'), [USER_ADMIN, USER_SUB_ADMIN])) :?>
+                                    <span>Admin Info</span>
+                                <?php else:?>
+                                    <span>Staff Info</span>
+                                <?php endif?>
                             </div>
                         </a>
                     </li>

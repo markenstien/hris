@@ -9,7 +9,7 @@
 <?php build('content') ?>
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
-            <h4>Create Traning & Seminars</h4>
+            <h4>Create Training & Seminars</h4>
             <?php echo wLinkDefault(_route('requirement:index'), 'Back to list', ['icon' => 'arrow-left-circle'])?>
         </div>
         <div class="widget-content widget-content-area">
