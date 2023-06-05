@@ -8,6 +8,7 @@
 
 		protected $_attachmentForm = null;
 		protected $_attachmentModel = null;
+		protected $_formCommon = null;
 
 		public $data;
 
@@ -24,7 +25,7 @@
 			$this->data['_formCommon'] = $this->_formCommon;
 			$this->data['_attachmentForm'] = $this->_attachmentForm;
 			$this->data['_global'] = [
-				'pageTitle' => whoIs('user_type')
+				'pageTitle' => isEqual(whoIs('user_type'), USER_HR) ? 'HR' : whoIs('user_type')
 			];
 			$user = whoIs(); 
 			if($user && isEqual($user->user_type , 'admin'))

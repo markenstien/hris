@@ -2,7 +2,7 @@
 	<?php echo wDivider(40)?>
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">Training and Seminars</h4>
+			<h4 class="card-title">Training & Seminar</h4>
 		</div>
 
 		<div class="card-body">
@@ -11,7 +11,7 @@
 				<table class="table table-bordered">
 					<thead>
 						<th>#</th>
-						<th>Training and Cert</th>
+						<th>Title</th>
 						<th>Deadline</th>
 					</thead>
 

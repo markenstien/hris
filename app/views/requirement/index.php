@@ -18,7 +18,7 @@
                     <thead>
                         <th>#</th>
                         <!-- <th>Code</th> -->
-                        <th>Training</th>
+                        <th>Title</th>
                         <th>Description</th>
                         <th>Importance</th>
                         <th>Action</th>
